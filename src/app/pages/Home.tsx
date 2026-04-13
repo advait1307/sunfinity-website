@@ -8,12 +8,12 @@ const partnerLogos = [
   { name: 'EDB Postgres', src: '/images/edb-postgres.png' },
   { name: 'Yugabyte DB', src: '/images/yugabyte-logo.png' },
   { name: 'Salesforce', src: '/images/salesforce-logo.png' },
-  { name: 'Elastic', src: '/images/elastic-logo.jpg' },
+  { name: 'Elastic', src: '/images/elastic-logo.png' },
   { name: 'Cloudera', src: '/images/cloudera-logo.png' },
   { name: 'EDB Postgres', src: '/images/edb-postgres.png' },
   { name: 'Yugabyte DB', src: '/images/yugabyte-logo.png' },
   { name: 'Salesforce', src: '/images/salesforce-logo.png' },
-  { name: 'Elastic', src: '/images/elastic-logo.jpg' },
+  { name: 'Elastic', src: '/images/elastic-logo.png' },
   { name: 'Cloudera', src: '/images/cloudera-logo.png' },
 ]
 
@@ -26,6 +26,7 @@ const services = [
       'End-to-end database services — consulting, implementation, migration, and managed services. Core expertise in PostgreSQL, MongoDB, and Elastic across commercial and community versions.',
     to: '/advanced-data-services',
     color: 'from-orange-500 to-amber-600',
+    image: '/images/Advanced Data Services .jpg',
   },
   {
     icon: TrendingUp,
@@ -35,6 +36,7 @@ const services = [
       'We equip technical sales teams with the Sellers Interpersonal Quotient (SIQ) — the force multiplier that turns technical excellence into closed deals.',
     to: '/upskilling-services',
     color: 'from-amber-500 to-orange-600',
+    image: '/images/upskilling.jpg',
   },
   {
     icon: Users,
@@ -44,6 +46,7 @@ const services = [
       'Elite talent acquisition and contract staffing for the AI-driven world. Specializing in Data Services & Architecture, Cloud Solutions, and Solution Engineering.',
     to: '/staffing-services',
     color: 'from-orange-600 to-red-600',
+    image: '/images/staffing.jpg',
   },
 ]
 
@@ -80,12 +83,12 @@ export default function Home() {
             transition={{ duration: 0.8 }}
           >
             {/* Logo */}
-            <div className="flex justify-center mb-10">
-              <div className="bg-white/20 backdrop-blur-sm p-4 rounded-2xl">
+            <div className="flex justify-center mb-1">
+              <div className="h-14 overflow-hidden flex items-center">
                 <img
                   src="/images/sunfinity-logo.png"
                   alt="Sunfinity Technology Solutions"
-                  className="h-20 w-auto object-contain"
+                  className="h-40 w-auto object-contain"
                 />
               </div>
             </div>
@@ -93,9 +96,9 @@ export default function Home() {
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-white leading-tight mb-6 tracking-tight">
               Simplifying<br />The Complex
             </h1>
-            <p className="text-white/80 text-lg md:text-xl max-w-2xl mx-auto mb-12">
+            {/* <p className="text-white/80 text-lg md:text-xl max-w-2xl mx-auto mb-12">
               Sunfinity Technology Solutions — powering data, sales, and talent for India's most ambitious organisations.
-            </p>
+            </p> */}
 
             {/* Three pillars */}
             <div className="grid md:grid-cols-3 gap-4 max-w-4xl mx-auto mb-12">
@@ -147,28 +150,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── Partner Ticker ── */}
-      <section className="py-12 bg-white border-b border-gray-100">
-        <p className="text-center text-sm font-semibold text-gray-400 uppercase tracking-widest mb-8">
-          Technology Partners
-        </p>
-        <div className="overflow-hidden">
-          <div className="flex gap-16 animate-ticker" style={{ width: 'max-content' }}>
-            {partnerLogos.map((logo, i) => (
-              <div key={i} className="flex items-center justify-center h-12 w-40 shrink-0 grayscale hover:grayscale-0 transition-all opacity-60 hover:opacity-100">
-                <img
-                  src={logo.src}
-                  alt={logo.name}
-                  className="max-h-full max-w-full object-contain"
-                />
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* ── Services Section ── */}
-      <section className="py-28 bg-white">
+      <section className="pt-16 pb-28 bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -214,16 +197,39 @@ export default function Home() {
 
                   {/* Visual side */}
                   <div className={`${!isEven ? 'md:col-start-1 md:row-start-1' : ''}`}>
-                    <div className={`bg-gradient-to-br ${service.color} rounded-3xl p-1 shadow-2xl`}>
-                      <div className="bg-white rounded-[22px] p-10 text-center">
-                        <Icon className="w-20 h-20 mx-auto text-[#ed8416] mb-4 opacity-20" />
-                        <p className="text-2xl font-bold text-gray-200">{service.title}</p>
-                      </div>
+                    <div className="relative overflow-hidden rounded-3xl shadow-2xl">
+                      <img
+                        src={service.image}
+                        alt={`${service.title} visual`}
+                        className="w-full h-full object-cover"
+                      />
+                      <div className="absolute inset-0 bg-[#ed8416]/20 mix-blend-multiply pointer-events-none" />
                     </div>
                   </div>
                 </motion.div>
               )
             })}
+          </div>
+        </div>
+      </section>
+
+
+      {/* ── Partner Ticker ── */}
+      <section className="py-12 bg-white border-b border-gray-100">
+        <p className="text-center text-sm font-semibold text-gray-500 uppercase tracking-widest mb-8">
+          Technology Partners
+        </p>
+        <div className="overflow-hidden">
+          <div className="flex gap-16 animate-ticker" style={{ width: 'max-content' }}>
+            {partnerLogos.map((logo, i) => (
+              <div key={i} className="flex items-center justify-center h-12 w-40 shrink-0 grayscale hover:grayscale-0 transition-all opacity-60 hover:opacity-100">
+                <img
+                  src={logo.src}
+                  alt={logo.name}
+                  className="max-h-full max-w-full object-contain"
+                />
+              </div>
+            ))}
           </div>
         </div>
       </section>
