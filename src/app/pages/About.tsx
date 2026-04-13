@@ -10,6 +10,7 @@ const team = [
       'More than 25 years of successful career ranging from customer support to sales leadership. Anshuman is passionate about Solution sales and is a champion of client delight.',
     image: '/images/team-anshuman.jpg',
     imagePosition: '50% 0%',
+    profileUrl: 'https://www.linkedin.com/in/raianshu/',
   },
   {
     name: 'Sriraman R',
@@ -18,6 +19,7 @@ const team = [
       'Technology leader with over 25 years of experience across solution sales and professional services. Sriraman brings a consultative approach with a track record of delivering impactful digital transformation outcomes.',
     image: '/images/team-sriraman.jpg',
     imagePosition: '50% 14%',
+    profileUrl: 'https://www.linkedin.com/in/sriramanr/',
   },
   {
     name: 'Ajay Agrawal',
@@ -26,6 +28,7 @@ const team = [
       'Accomplished Senior Solution Architect with 25 years across cloud, integration, and warehousing — renowned for optimizing performance, driving transformational change, and architecting scalable enterprise data platforms.',
     image: '/images/team-ajay.jpg',
     imagePosition: '50% 18%',
+    profileUrl: 'https://www.linkedin.com/in/ajay-agrawal-b114178/',
   },
 ]
 
@@ -145,14 +148,20 @@ export default function About() {
                 transition={{ duration: 0.6, delay: idx * 0.1 }}
                 className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow"
               >
-                <div className="h-64 md:h-72 bg-gray-100 overflow-hidden">
+                <a
+                  href={member.profileUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`${member.name} LinkedIn profile`}
+                  className="block h-64 md:h-72 bg-gray-100 overflow-hidden"
+                >
                   <img
                     src={member.image}
                     alt={member.name}
                     className="w-full h-full object-cover"
                     style={{ objectPosition: member.imagePosition }}
                   />
-                </div>
+                </a>
                 <div className="p-6">
                   <h3 className="text-xl font-bold text-gray-900 mb-1">{member.name}</h3>
                   <p className="text-[#ed8416] font-medium text-sm mb-4">{member.title}</p>
