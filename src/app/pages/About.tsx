@@ -9,6 +9,7 @@ const team = [
     description:
       'More than 25 years of successful career ranging from customer support to sales leadership. Anshuman is passionate about Solution sales and is a champion of client delight.',
     image: '/images/team-anshuman.jpg',
+    imagePosition: '50% 0%',
   },
   {
     name: 'Sriraman R',
@@ -16,6 +17,7 @@ const team = [
     description:
       'Technology leader with over 25 years of experience across solution sales and professional services. Sriraman brings a consultative approach with a track record of delivering impactful digital transformation outcomes.',
     image: '/images/team-sriraman.jpg',
+    imagePosition: '50% 14%',
   },
   {
     name: 'Ajay Agrawal',
@@ -23,6 +25,7 @@ const team = [
     description:
       'Accomplished Senior Solution Architect with 25 years across cloud, integration, and warehousing — renowned for optimizing performance, driving transformational change, and architecting scalable enterprise data platforms.',
     image: '/images/team-ajay.jpg',
+    imagePosition: '50% 18%',
   },
 ]
 
@@ -107,12 +110,12 @@ export default function About() {
                 </div>
               ))}
 
-              <div className="p-6 rounded-xl bg-gradient-to-br from-[#ed8416] to-[#9d5710] text-white mt-4">
+              {/* <div className="p-6 rounded-xl bg-gradient-to-br from-[#ed8416] to-[#9d5710] text-white mt-4">
                 <h3 className="font-bold text-lg mb-2">The Sunfinity Essence</h3>
                 <p className="text-white/85 text-sm leading-relaxed">
                   The word "Sunfinity" blends "Sun" — a symbol of energy, clarity, and boundless potential — with "Infinity," representing limitless possibilities and endless growth. Together, they capture our core ethos: harnessing the power of knowledge and innovation to create infinite value.
                 </p>
-              </div>
+              </div> */}
             </motion.div>
           </div>
         </div>
@@ -142,11 +145,12 @@ export default function About() {
                 transition={{ duration: 0.6, delay: idx * 0.1 }}
                 className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow"
               >
-                <div className="h-64 bg-gray-100 overflow-hidden">
+                <div className="h-64 md:h-72 bg-gray-100 overflow-hidden">
                   <img
                     src={member.image}
                     alt={member.name}
-                    className="w-full h-full object-cover object-top"
+                    className="w-full h-full object-cover"
+                    style={{ objectPosition: member.imagePosition }}
                   />
                 </div>
                 <div className="p-6">

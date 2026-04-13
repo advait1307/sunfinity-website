@@ -23,7 +23,7 @@ const partners = [
   },
   {
     name: 'Elastic — The Search AI Company',
-    logo: '/images/elastic-logo.jpg',
+    logo: '/images/elastic-logo.png',
     description:
       'The open-source platform that powers search, observability, and security. A real-time distributed search and analytics engine enabling fast, flexible data exploration across massive datasets.',
   },
