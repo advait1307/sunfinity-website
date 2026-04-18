@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { Database, TrendingUp, Users, ChevronRight, ArrowRight } from 'lucide-react'
+import { Database, TrendingUp, Users, ChevronRight, ArrowRight, BarChart2 } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import Navigation from '../components/Navigation'
 import Footer from '../components/Footer'
@@ -39,14 +39,14 @@ const services = [
     image: '/images/upskilling.jpg',
   },
   {
-    icon: Users,
-    title: 'Staffing Services',
-    tagline: 'Complex Talent, Simplified',
+    icon: BarChart2,
+    title: 'Business Intelligence & Analytics',
+    tagline: 'Business Analytics, Simplified',
     description:
-      'Elite talent acquisition and contract staffing for the AI-driven world. Specializing in Data Services & Architecture, Cloud Solutions, and Solution Engineering.',
-    to: '/staffing-services',
+      'Simplify raw numbers into actionable stories with our BI and Analytics services. Powered by Tableau, we help you transform into an AI and data driven organization.',
+    to: '/business-intelligence-and-analytics',
     color: 'from-orange-600 to-red-600',
-    image: '/images/staffing.jpg',
+    image: '/images/business-intelligence.jpg',
   },
 ]
 
@@ -103,9 +103,9 @@ export default function Home() {
             {/* Three pillars */}
             <div className="grid md:grid-cols-3 gap-4 max-w-4xl mx-auto mb-12">
               {[
-                { label: 'Complex Data, Simplified', sub: 'Database & Analytics' },
-                { label: 'Complex Sales, Simplified', sub: 'UpSkilling & SIQ' },
-                { label: 'Complex Talent, Simplified', sub: 'Staffing & Acquisition' },
+                { label: 'Complex Data, Simplified'},
+                { label: 'Complex Sales, Simplified'},
+                { label: 'Business Analytics, Simplified'},
               ].map((p) => (
                 <motion.div
                   key={p.label}

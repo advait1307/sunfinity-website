@@ -6,6 +6,7 @@ import Partnerships from './app/pages/Partnerships'
 import AdvancedDataServices from './app/pages/AdvancedDataServices'
 import UpskillingServices from './app/pages/UpskillingServices'
 import StaffingServices from './app/pages/StaffingServices'
+import BusinessIntelligenceAndAnalytics from './app/pages/BusinessIntelligenceAndAnalytics'
 
 function ScrollToTop() {
   const { pathname } = useLocation()
@@ -27,6 +28,7 @@ export default function App() {
         <Route path="/partnerships" element={<Partnerships />} />
         <Route path="/advanced-data-services" element={<AdvancedDataServices />} />
         <Route path="/upskilling-services" element={<UpskillingServices />} />
+        <Route path="/business-intelligence-and-analytics" element={<BusinessIntelligenceAndAnalytics />} />
         <Route path="/staffing-services" element={<StaffingServices />} />
       </Routes>
     </BrowserRouter>

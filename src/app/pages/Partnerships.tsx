@@ -28,10 +28,10 @@ const partners = [
       'The open-source platform that powers search, observability, and security. A real-time distributed search and analytics engine enabling fast, flexible data exploration across massive datasets.',
   },
   {
-    name: 'Up2Speed',
-    logo: '/images/up2speed-logo.png',
+    name: 'Mastering Technical Sales',
+    logo: '/images/mastering-technical-sales-photo.jpeg',
     description:
-      'A Sales Enablement & Creative Design Firm headquartered in Singapore that helps clients maximize revenue and profitability via their sales teams, pre-sales teams, and indirect channels.',
+      "Founded in 2000 by industry veterans John Care and Aron Bohlig, Mastering Technical Sales (MTS) has become the global benchmark for PreSales excellence. Built around the acclaimed Sales Engineer's Handbook, MTS offers the world's most comprehensive training curriculum for Solutions Engineers and Managers. Their specialized coaching and world-class programs equip technical professionals with the skills to master every stage of the deal.",
   },
   {
     name: 'Cloudera',
