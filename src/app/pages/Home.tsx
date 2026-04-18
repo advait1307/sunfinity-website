@@ -115,7 +115,6 @@ export default function Home() {
                   className="bg-white/15 backdrop-blur-sm rounded-xl px-5 py-4 border border-white/20"
                 >
                   <p className="text-white font-semibold text-sm">{p.label}</p>
-                  <p className="text-white/60 text-xs mt-1">{p.sub}</p>
                 </motion.div>
               ))}
             </div>
