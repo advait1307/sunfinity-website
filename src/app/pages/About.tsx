@@ -81,7 +81,7 @@ export default function About() {
                 Enterprise expertise.<br />Startup agility.
               </h2>
               <p className="text-gray-600 leading-relaxed mb-5">
-                Built on a foundation of deep industry expertise, Sunfinity is founded and led by veterans from global giants like <strong>Wipro, HPE, Dell EMC,</strong> and <strong>Tata</strong>. The company combines the agility of a startup with the strategic sophistication of seasoned IT leadership.
+                Built on a foundation of deep industry expertise, Sunfinity is founded and led by veterans from global giants like <strong>Wipro, HPE, Dell EMC, UI Path, Commvault, FIS</strong> and <strong>TCS</strong>. The company combines the agility of a startup with the strategic sophistication of seasoned IT leadership.
               </p>
               <p className="text-gray-600 leading-relaxed mb-5">
                 At its core, Sunfinity is dedicated to simplifying complexity — whether that is in the intricate world of Data management or the demanding landscape of modern technical sales.
@@ -101,8 +101,8 @@ export default function About() {
               {[
                 { label: 'Combined Leadership Experience', value: '75+ Years' },
                 { label: 'Technology Partners', value: '6+' },
-                { label: 'Office Locations', value: '3 Cities' },
-                { label: 'Domains Served', value: 'Data · Sales · Talent' },
+                { label: 'Office Locations', value: 'Mumbai, Pune, Delhi' },
+                // { label: 'Domains Served', value: 'Data · Sales · Talent' },
               ].map((stat) => (
                 <div
                   key={stat.label}
@@ -112,13 +112,6 @@ export default function About() {
                   <span className="text-[#ed8416] font-bold text-lg">{stat.value}</span>
                 </div>
               ))}
-
-              {/* <div className="p-6 rounded-xl bg-gradient-to-br from-[#ed8416] to-[#9d5710] text-white mt-4">
-                <h3 className="font-bold text-lg mb-2">The Sunfinity Essence</h3>
-                <p className="text-white/85 text-sm leading-relaxed">
-                  The word "Sunfinity" blends "Sun" — a symbol of energy, clarity, and boundless potential — with "Infinity," representing limitless possibilities and endless growth. Together, they capture our core ethos: harnessing the power of knowledge and innovation to create infinite value.
-                </p>
-              </div> */}
             </motion.div>
           </div>
         </div>

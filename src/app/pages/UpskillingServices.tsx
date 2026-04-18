@@ -59,7 +59,7 @@ export default function UpskillingServices() {
               transition={{ duration: 0.6 }}
             >
               <img
-                src="/images/upskilling-img.png"
+                src="/images/upskilling.jpg"
                 alt="UpSkilling Services"
                 className="rounded-2xl shadow-2xl w-full object-cover"
               />
