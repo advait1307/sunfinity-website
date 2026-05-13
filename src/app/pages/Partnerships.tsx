@@ -2,44 +2,75 @@ import { motion } from 'framer-motion'
 import Navigation from '../components/Navigation'
 import Footer from '../components/Footer'
 
+/** Update `websiteUrl` for each partner as needed (company home or product page). */
 const partners = [
   {
     name: 'EDB Postgres AI',
     logo: '/images/edb-postgres.png',
+    websiteUrl: 'https://www.enterprisedb.com/',
     description:
       'An enterprise-grade PostgreSQL platform offering advanced performance tuning, enhanced security, and Oracle compatibility for mission-critical workloads.',
   },
   {
     name: 'Yugabyte DB',
     logo: '/images/yugabyte-logo.png',
+    websiteUrl: 'https://www.yugabyte.com/',
     description:
       'A distributed SQL database combining the resilience and scalability of NoSQL with the transactional consistency of PostgreSQL — ideal for cloud-native architectures.',
   },
   {
     name: 'Salesforce / Tableau',
     logo: '/images/salesforce-logo.png',
+    websiteUrl: 'https://www.tableau.com/',
     description:
       'Tableau is the broadest and deepest end-to-end analytics platform with built-in Salesforce AI — helping organizations use data responsibly to drive better business outcomes.',
   },
   {
     name: 'Elastic — The Search AI Company',
     logo: '/images/elastic-logo.png',
+    websiteUrl: 'https://www.elastic.co/',
     description:
       'The open-source platform that powers search, observability, and security. A real-time distributed search and analytics engine enabling fast, flexible data exploration across massive datasets.',
   },
   {
     name: 'Mastering Technical Sales',
     logo: '/images/mastering-technical-sales-photo.jpeg',
+    websiteUrl: 'https://www.masteringtechnicalsales.com/',
     description:
       "Founded in 2000 by industry veterans John Care and Aron Bohlig, Mastering Technical Sales (MTS) has become the global benchmark for PreSales excellence. Built around the acclaimed Sales Engineer's Handbook, MTS offers the world's most comprehensive training curriculum for Solutions Engineers and Managers. Their specialized coaching and world-class programs equip technical professionals with the skills to master every stage of the deal.",
   },
   {
     name: 'Cloudera',
     logo: '/images/cloudera-logo.png',
+    websiteUrl: 'https://www.cloudera.com/',
     description:
       'Enterprise data platform enabling organizations to operationalize analytics across hybrid and multi-cloud environments with unified governance and security.',
   },
 ]
+
+function PartnerLogoLink({
+  websiteUrl,
+  name,
+  logo,
+  className,
+}: {
+  websiteUrl: string
+  name: string
+  logo: string
+  className?: string
+}) {
+  return (
+    <a
+      href={websiteUrl}
+      target="_blank"
+      rel="noopener noreferrer"
+      className={className}
+      aria-label={`Visit ${name} website`}
+    >
+      <img src={logo} alt={name} className="max-h-full max-w-full object-contain" />
+    </a>
+  )
+}
 
 export default function Partnerships() {
   return (
@@ -79,7 +110,12 @@ export default function Partnerships() {
           {[...partners, ...partners].map((p, i) => (
             p.logo && (
               <div key={i} className="flex items-center justify-center h-12 w-40 shrink-0 grayscale hover:grayscale-0 opacity-60 hover:opacity-100 transition-all">
-                <img src={p.logo} alt={p.name} className="max-h-full max-w-full object-contain" />
+                <PartnerLogoLink
+                  websiteUrl={p.websiteUrl}
+                  name={p.name}
+                  logo={p.logo}
+                  className="flex items-center justify-center h-full w-full"
+                />
               </div>
             )
           ))}
@@ -103,10 +139,11 @@ export default function Partnerships() {
                 <div className="p-8">
                   {partner.logo && (
                     <div className="h-20 flex items-center justify-start mb-6">
-                      <img
-                        src={partner.logo}
-                        alt={partner.name}
-                        className="max-h-full max-w-[160px] object-contain grayscale group-hover:grayscale-0 transition-all"
+                      <PartnerLogoLink
+                        websiteUrl={partner.websiteUrl}
+                        name={partner.name}
+                        logo={partner.logo}
+                        className="max-h-full max-w-[160px] inline-flex grayscale group-hover:grayscale-0 transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-[#ed8416] focus-visible:ring-offset-2 rounded"
                       />
                     </div>
                   )}

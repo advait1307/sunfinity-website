@@ -2,6 +2,7 @@ import { motion } from 'framer-motion'
 import { GraduationCap, TrendingUp, Target, CheckCircle, Quote } from 'lucide-react'
 import Navigation from '../components/Navigation'
 import Footer from '../components/Footer'
+import PresalesGears from '../components/PresalesGears'
 
 const essentialSkills = [
   'Technical Win',
@@ -58,11 +59,7 @@ export default function UpskillingServices() {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <img
-                src="/images/upskilling.jpg"
-                alt="UpSkilling Services"
-                className="rounded-2xl shadow-2xl w-full object-cover"
-              />
+              <PresalesGears width="100%" />
             </motion.div>
             <motion.div
               initial={{ opacity: 0, x: 30 }}
@@ -168,45 +165,15 @@ export default function UpskillingServices() {
         </div>
       </section>
 
-      {/* Industry Verticals */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl font-bold text-gray-900 mb-3">Industry Verticals</h2>
-            <p className="text-gray-600 text-lg">Deep domain knowledge across key sectors</p>
-          </motion.div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {verticals.map((v, idx) => (
-              <motion.div
-                key={v.title}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: idx * 0.1 }}
-                className="bg-orange-50 rounded-2xl p-6 border border-orange-100 hover:border-[#ed8416] transition-colors"
-              >
-                <Target className="w-8 h-8 text-[#ed8416] mb-4" />
-                <h3 className="font-bold text-gray-900 mb-2">{v.title}</h3>
-                <p className="text-gray-600 text-sm leading-relaxed">{v.desc}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+      
 
       {/* CTA */}
       <section className="py-20 bg-gradient-to-br from-[#ed8416] to-[#9d5710]">
         <div className="max-w-3xl mx-auto px-6 text-center">
           <h2 className="text-4xl font-bold text-white mb-4">Equip your team to win more deals</h2>
           <p className="text-white/80 text-lg mb-8">
-            Let's discuss how the SIQ program can transform your technical sales team.
+            Let's discuss how the SIQ program can transform your technical sales team. 
+            <br></br>For a free skill assessment, reach out to us.
           </p>
           <a
             href="mailto:sales@sunfinity.tech"

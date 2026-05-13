@@ -7,7 +7,11 @@ export default function Navigation() {
   const [mobileOpen, setMobileOpen] = useState(false)
   const [servicesOpen, setServicesOpen] = useState(false)
 
-  const isActive = (path: string) => location.pathname === path
+  const isActive = (path: string) => {
+    if (path === '/') return location.pathname === '/'
+    if (path === '/blogs') return location.pathname.startsWith('/blogs')
+    return location.pathname === path
+  }
 
   const linkClass = (path: string) =>
     `transition-colors font-medium ${
@@ -32,6 +36,8 @@ export default function Navigation() {
             <Link to="/" className={linkClass('/')}>Home</Link>
             <Link to="/about" className={linkClass('/about')}>About</Link>
             <Link to="/partnerships" className={linkClass('/partnerships')}>Partnerships</Link>
+            <Link to="/blogs" className={linkClass('/blogs')}>Blog</Link>
+            <Link to="/podcasts" className={linkClass('/podcasts')}>Podcasts</Link>
 
             {/* Services dropdown */}
             <div
@@ -43,31 +49,36 @@ export default function Navigation() {
                 Services <ChevronDown className="w-4 h-4" />
               </button>
               {servicesOpen && (
-                <div className="absolute top-full left-0 mt-1 w-64 bg-white rounded-xl shadow-xl border border-gray-100 py-2">
-                  <Link
-                    to="/advanced-data-services"
-                    className="block px-5 py-2.5 text-gray-700 hover:bg-orange-50 hover:text-[#ed8416] transition-colors"
-                    onClick={() => setServicesOpen(false)}
-                  >
-                    Advanced Data Services
-                  </Link>
-                  <Link
-                    to="/upskilling-services"
-                    className="block px-5 py-2.5 text-gray-700 hover:bg-orange-50 hover:text-[#ed8416] transition-colors"
-                    onClick={() => setServicesOpen(false)}
-                  >
-                    UpSkilling Services
-                  </Link>
-                  <Link
-                    to="/business-intelligence-and-analytics"
-                    className="block px-5 py-2.5 text-gray-700 hover:bg-orange-50 hover:text-[#ed8416] transition-colors"
-                    onClick={() => setServicesOpen(false)}
-                  >
-                    Business Intelligence & Analytics
-                  </Link>
+                <div className="absolute top-full left-0 z-50 w-64 pt-2">
+                  {/* pt-2: padding is hit-testable; mt-* margin created a dead zone and fired mouseLeave */}
+                  <div className="bg-white rounded-xl shadow-xl border border-gray-100 py-2">
+                    <Link
+                      to="/advanced-data-services"
+                      className="block px-5 py-2.5 text-gray-700 hover:bg-orange-50 hover:text-[#ed8416] transition-colors"
+                      onClick={() => setServicesOpen(false)}
+                    >
+                      Advanced Data Services
+                    </Link>
+                    <Link
+                      to="/business-intelligence-and-analytics"
+                      className="block px-5 py-2.5 text-gray-700 hover:bg-orange-50 hover:text-[#ed8416] transition-colors"
+                      onClick={() => setServicesOpen(false)}
+                    >
+                      Business Intelligence & Analytics
+                    </Link>
+                    <Link
+                      to="/upskilling-services"
+                      className="block px-5 py-2.5 text-gray-700 hover:bg-orange-50 hover:text-[#ed8416] transition-colors"
+                      onClick={() => setServicesOpen(false)}
+                    >
+                      UpSkilling Services
+                    </Link>
+                  </div>
                 </div>
               )}
             </div>
+
+            {/* <Link to="/careers" className={linkClass('/careers')}>Careers</Link> */}
 
             <a
               href="mailto:sales@sunfinity.tech"
@@ -93,9 +104,13 @@ export default function Navigation() {
               { to: '/', label: 'Home' },
               { to: '/about', label: 'About' },
               { to: '/partnerships', label: 'Partnerships' },
+              { to: '/blogs', label: 'Blog' },
+              { to: '/podcasts', label: 'Podcasts' },
+              { to: '/careers', label: 'Careers' },
               { to: '/advanced-data-services', label: 'Advanced Data Services' },
               { to: '/upskilling-services', label: 'UpSkilling Services' },
               { to: '/business-intelligence-and-analytics', label: 'Business Intelligence & Analytics' },
+              { to: '/staffing-services', label: 'Staffing Services' },
             ].map(({ to, label }) => (
               <Link
                 key={to}
