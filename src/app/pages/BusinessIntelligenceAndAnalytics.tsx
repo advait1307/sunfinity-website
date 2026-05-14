@@ -15,9 +15,8 @@ type BIServiceSection = {
   icon: typeof BarChart3
   title: string
   strapline: string
-  /** Partner logo path when available (e.g. Tableau via Salesforce); otherwise the Lucide icon is shown large. */
-  logoSrc?: string
-  logoAlt?: string
+  imageSrc: string
+  imageAlt: string
   details: ServiceDetail[]
 }
 
@@ -27,8 +26,8 @@ const biServiceSections: BIServiceSection[] = [
     title: 'Visualization & Dashboard Development',
     strapline:
       'From KPI dashboards to real-time operations — one trusted view of the metrics that move your business.',
-    logoSrc: '/images/salesfobrce-logo.png',
-    logoAlt: 'Tableau — Salesforce',
+    imageSrc: '/public/images/visual.png',   // ← replace with your path
+    imageAlt: 'Visualization & Dashboard Development',
     details: [
       {
         title: 'KPI dashboards',
@@ -89,6 +88,8 @@ const biServiceSections: BIServiceSection[] = [
     title: 'Reporting & MIS Automation',
     strapline:
       'Replace manual report factories with scheduled, validated, multi-channel delivery — and predictable commercial terms.',
+    imageSrc: '/public/images/Reporting.png',   // ← replace with your path
+    imageAlt: 'Reporting & MIS Automation',
     details: [
       {
         title: 'Automated reporting',
@@ -134,7 +135,7 @@ const biServiceSections: BIServiceSection[] = [
         summary:
           'Consulting and data work often suffer scope creep and surprise invoices. Our reporting and MIS offerings use fixed, transparent pricing so you know scope and cost before you start.',
         points: [
-          'Fixed-price models for clearly scoped deliverables — fewer mid-project “out of scope” debates',
+          'Fixed-price models for clearly scoped deliverables — fewer mid-project "out of scope" debates',
           'Statements of work with explicit inclusions and exclusions before signature',
           'Subscription options for ongoing managed reporting — one monthly line for delivery, maintenance, and support',
           'Tiers that scale with your business — pay for what you use, scale when you need to',
@@ -149,6 +150,8 @@ const biServiceSections: BIServiceSection[] = [
     title: 'Analytics Managed Services',
     strapline:
       'Purpose-built for growing businesses: migrate off Excel, ship useful analytics quickly, and keep everything supported.',
+    imageSrc: '/public/images/AnalyticsManagedServices.png',   // ← replace with your path
+    imageAlt: 'Analytics Managed Services',
     details: [
       {
         title: 'Excel migration',
@@ -207,17 +210,21 @@ const biServiceSections: BIServiceSection[] = [
 ]
 
 export default function BusinessIntelligenceAndAnalytics() {
-  const [openItems, setOpenItems] = useState<Record<string, boolean>>({})
+  const [openItems, setOpenItems] = useState<Record<string, string>>({})
 
-  const toggleItem = (key: string) => {
-    setOpenItems((prev) => ({ ...prev, [key]: !prev[key] }))
+  const toggleItem = (serviceTitle: string, detailTitle: string) => {
+    setOpenItems((prev) => ({
+      ...prev,
+      [serviceTitle]: prev[serviceTitle] === detailTitle ? '' : detailTitle,
+    }))
   }
 
   return (
     <div className="min-h-screen bg-white">
       <Navigation />
 
-      <section className="relative pt-32 pb-20 bg-gradient-to-br from-[#ed8416] to-[#9d5710] overflow-hidden">
+      {/* ── Hero ── */}
+      <section className="relative pt-32 pb-24 bg-gradient-to-br from-[#ed8416] to-[#7a3f08] overflow-hidden">
         <div
           className="absolute inset-0 opacity-10"
           style={{
@@ -226,25 +233,26 @@ export default function BusinessIntelligenceAndAnalytics() {
             backgroundSize: '60px 60px',
           }}
         />
+        <div className="absolute -top-24 -right-24 w-96 h-96 rounded-full bg-white/5 blur-3xl pointer-events-none" />
+        <div className="absolute -bottom-16 -left-16 w-72 h-72 rounded-full bg-black/10 blur-3xl pointer-events-none" />
         <div className="relative max-w-5xl mx-auto px-6 text-center text-white">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            <span className="inline-block bg-white/20 text-sm font-semibold px-4 py-1.5 rounded-full mb-6 uppercase tracking-widest">
+          <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
+            <span className="inline-block bg-white/15 border border-white/20 text-white text-sm font-semibold px-5 py-1.5 rounded-full mb-7 uppercase tracking-widest backdrop-blur-sm">
               Business Analytics, Simplified
             </span>
-            <h1 className="text-5xl md:text-7xl font-black mb-6">Business Intelligence & Analytics</h1>
-            <p className="text-white/80 text-xl max-w-3xl mx-auto">
+            <h1 className="text-5xl md:text-7xl font-black mb-6 leading-[1.05] tracking-tight">
+              Business Intelligence & Analytics
+            </h1>
+            <p className="text-white/75 text-xl max-w-2xl mx-auto leading-relaxed">
               Visualization · Reporting · Managed Services
             </p>
           </motion.div>
         </div>
       </section>
 
+      {/* ── Intro ── */}
       <section className="py-14 md:py-16 bg-white border-b border-gray-100">
-        <div className="max-w-3xl mx-auto px-6 text-center">
+        <div className="max-w-4xl mx-auto px-6 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -261,7 +269,7 @@ export default function BusinessIntelligenceAndAnalytics() {
               {['Tableau', 'Visualization', 'MIS Reporting', 'Managed Analytics'].map((capability) => (
                 <span
                   key={capability}
-                  className="bg-orange-50/90 text-[#ed8416] border border-orange-100 px-4 py-1.5 rounded-full text-sm font-medium"
+                  className="bg-orange-50 text-[#ed8416] border border-orange-200/70 px-4 py-1.5 rounded-full text-sm font-semibold tracking-wide hover:bg-orange-100 transition-colors"
                 >
                   {capability}
                 </span>
@@ -271,41 +279,51 @@ export default function BusinessIntelligenceAndAnalytics() {
         </div>
       </section>
 
-      <section className="py-16 md:py-20 bg-[#f8f8f7]">
+      {/* ── Services ── */}
+      <section className="pt-8 md:pt-10 pb-16 md:pb-24 bg-[#f8f8f7]">
         <div className="max-w-6xl mx-auto px-6 lg:px-8">
+
+          {/* Section header */}
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="text-center mb-10 md:mb-14"
+            className="text-center mb-12 md:mb-16"
           >
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#ed8416] mb-3">What we deliver</p>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-2 tracking-tight">BI &amp; Analytics Services</h2>
-            <p className="text-[#ed8416] font-semibold text-sm md:text-base">
-              Visualization · Reporting · Managed Services
-            </p>
+            <p className="text-xs font-bold uppercase tracking-[0.22em] text-[#ed8416] mb-3">What we deliver</p>
+            <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-3 tracking-tight">BI &amp; Analytics Services</h2>
+            <div className="flex items-center justify-center gap-3 text-sm text-gray-400 font-medium">
+              <span>Visualization</span>
+              <span className="w-1 h-1 rounded-full bg-[#ed8416] inline-block" />
+              <span>Reporting</span>
+              <span className="w-1 h-1 rounded-full bg-[#ed8416] inline-block" />
+              <span>Managed Services</span>
+            </div>
           </motion.div>
 
+          {/* Quote card */}
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="max-w-3xl mx-auto mb-12 md:mb-14"
+            className="max-w-3xl mx-auto mb-14"
           >
-            <div className="rounded-2xl border border-stone-200/80 bg-white shadow-[0_1px_2px_rgba(0,0,0,0.04)] px-6 py-5 md:px-8 md:py-6 ring-1 ring-black/[0.02]">
-              <p className="text-gray-700 text-base md:text-lg leading-relaxed text-center md:text-left">
+            <div className="relative rounded-2xl border border-orange-200/60 bg-white shadow-sm px-8 py-6 md:px-10 md:py-7 overflow-hidden">
+              <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-[#ed8416] to-[#9d5710] rounded-l-2xl" />
+              <p className="text-gray-700 text-base md:text-lg leading-relaxed pl-2">
                 From board-ready reporting to self-service exploration and managed analytics for lean teams — we
                 design, build, and run the experience end to end.
               </p>
             </div>
           </motion.div>
 
-          <div className="space-y-16 md:space-y-20">
+          {/* Service cards */}
+          <div className="space-y-12 md:space-y-16">
             {biServiceSections.map((service, idx) => {
               const Icon = service.icon
-              const logoOnLeft = idx % 2 === 1
+              const imageOnLeft = idx % 2 === 1
 
               return (
                 <motion.article
@@ -313,98 +331,117 @@ export default function BusinessIntelligenceAndAnalytics() {
                   initial={{ opacity: 0, y: 28 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: idx * 0.06 }}
-                  className="rounded-2xl border border-gray-200/90 bg-white shadow-sm overflow-hidden"
+                  transition={{ duration: 0.55, delay: idx * 0.07 }}
+                  className="rounded-2xl border border-gray-200/80 bg-white shadow-[0_2px_16px_rgba(0,0,0,0.06)] overflow-hidden"
                 >
-                  <div className="grid lg:grid-cols-2 gap-0">
+                  <div className="grid lg:grid-cols-2 min-h-[420px]">
+
+                    {/* ── Image panel ── */}
                     <div
-                      className={`flex flex-col justify-center px-6 py-10 md:px-10 md:py-12 lg:px-12 ${
-                        logoOnLeft ? 'order-2 lg:order-2' : 'order-1 lg:order-1'
+                      className={`relative min-h-[260px] lg:min-h-0 overflow-hidden
+                        ${imageOnLeft ? 'order-1' : 'order-1 lg:order-2'}
+                      `}
+                    >
+                      <img
+                        src={service.imageSrc}
+                        alt={service.imageAlt}
+                        className="absolute inset-0 h-full w-full object-cover"
+                      />
+                      {/* Subtle gradient overlay for visual polish */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
+                    </div>
+
+                    {/* ── Content panel: title + accordions ── */}
+                    <div
+                      className={`flex flex-col ${
+                        imageOnLeft
+                          ? 'order-2 border-l border-gray-100'
+                          : 'order-2 lg:order-1 border-r border-gray-100'
                       }`}
                     >
-                      <div className="w-12 h-12 rounded-xl bg-orange-50 border border-orange-100 flex items-center justify-center mb-5">
-                        <Icon className="w-6 h-6 text-[#ed8416]" />
+                      {/* Title block */}
+                      <div className="px-6 pt-7 pb-6 border-b border-gray-100 bg-white">
+                        <div className="w-10 h-10 rounded-xl bg-[#ed8416] flex items-center justify-center mb-4 shadow-sm">
+                          <Icon className="w-5 h-5 text-white" />
+                        </div>
+                        <h3 className="text-2xl md:text-3xl font-black text-gray-900 mb-2 leading-tight tracking-tight">
+                          {service.title}
+                        </h3>
+                        <p className="text-gray-500 text-sm md:text-[0.9rem] leading-relaxed max-w-sm">
+                          {service.strapline}
+                        </p>
                       </div>
-                      <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3 tracking-tight">{service.title}</h3>
-                      <p className="text-gray-600 leading-relaxed text-[0.95rem] md:text-base max-w-xl">
-                        {service.strapline}
-                      </p>
-                    </div>
 
-                    <div
-                      className={`relative min-h-[200px] lg:min-h-[260px] border-t border-gray-100 lg:border-t-0 lg:border-l border-gray-100 flex items-center justify-center p-10 md:p-12 ${
-                        logoOnLeft ? 'order-1 lg:order-1 lg:border-r lg:border-l-0' : 'order-2 lg:order-2'
-                      } bg-gradient-to-br from-orange-50/90 via-white to-stone-50`}
-                    >
-                      {service.logoSrc ? (
-                        <div className="relative w-full max-w-[220px] aspect-[16/9] flex items-center justify-center rounded-2xl bg-white border border-orange-100/80 shadow-sm p-6">
-                          <img
-                            src={service.logoSrc}
-                            alt={service.logoAlt ?? ''}
-                            className="max-h-14 w-auto object-contain"
-                          />
-                        </div>
-                      ) : (
-                        <div className="relative flex flex-col items-center justify-center gap-3 text-center">
-                          <div className="w-24 h-24 rounded-2xl bg-white border border-orange-100 shadow-sm flex items-center justify-center">
-                            <Icon className="w-12 h-12 text-[#ed8416]" strokeWidth={1.25} />
-                          </div>
-                          <p className="text-xs font-medium uppercase tracking-wider text-gray-500 max-w-[14rem]">
-                            Built on governed models, automation, and managed delivery
-                          </p>
-                        </div>
-                      )}
-                    </div>
-                  </div>
+                      {/* Capabilities label */}
+                      <div className="px-6 py-3 border-b border-gray-100 bg-white flex items-center justify-between">
+                        <span className="text-[10px] font-bold uppercase tracking-[0.22em] text-[#ed8416]">
+                          Capabilities
+                        </span>
+                        <span className="text-[10px] text-gray-400 font-medium">
+                          {service.details.length} topics
+                        </span>
+                      </div>
 
-                  <div className="border-t border-gray-100 bg-[#fafaf9] px-4 py-4 md:px-6 md:py-5">
-                    <p className="text-xs font-semibold uppercase tracking-wider text-gray-500 mb-3 px-1">
-                      Capabilities
-                    </p>
-                    <div className="space-y-2 max-w-4xl mx-auto">
-                      {service.details.map((detail, detailIdx) => {
-                        const itemKey = `${service.title}-${detailIdx}`
-                        const isOpen = Boolean(openItems[itemKey])
-                        return (
-                          <div
-                            key={detail.title}
-                            className="rounded-xl border border-gray-200/90 bg-white overflow-hidden shadow-[0_1px_0_rgba(0,0,0,0.03)]"
-                          >
-                            <button
-                              type="button"
-                              onClick={() => toggleItem(itemKey)}
-                              className="w-full text-left px-4 py-3.5 md:px-5 md:py-4 hover:bg-gray-50/80 transition-colors flex items-center justify-between gap-4"
-                            >
-                              <span className="font-semibold text-gray-900 text-sm md:text-[0.95rem]">
-                                {detail.title}
-                              </span>
-                              <ChevronDown
-                                className={`w-5 h-5 text-[#ed8416] shrink-0 transition-transform duration-200 ${
-                                  isOpen ? 'rotate-180' : ''
+                      {/* Accordion items */}
+                      <div className="flex-1 divide-y divide-gray-100/80 bg-white">
+                        {service.details.map((detail) => {
+                          const isOpen = openItems[service.title] === detail.title
+                          return (
+                            <div key={detail.title}>
+                              <button
+                                type="button"
+                                onClick={() => toggleItem(service.title, detail.title)}
+                                className={`w-full text-left px-6 py-4 flex items-center justify-between gap-4 transition-colors duration-150 ${
+                                  isOpen ? 'bg-orange-50/50' : 'hover:bg-gray-50/60'
                                 }`}
-                              />
-                            </button>
-                            {isOpen && (
-                              <div className="px-4 pb-4 pt-0 md:px-5 md:pb-5 border-t border-gray-100 bg-white">
-                                <p className="text-gray-600 text-sm leading-relaxed mb-4 pt-4">{detail.summary}</p>
-                                <ul className="space-y-2.5 mb-4">
-                                  {detail.points.map((point) => (
-                                    <li key={point} className="flex items-start gap-2.5 text-sm text-gray-600">
-                                      <CheckCircle className="w-4 h-4 text-[#ed8416] shrink-0 mt-0.5" />
-                                      {point}
-                                    </li>
-                                  ))}
-                                </ul>
-                                <p className="text-sm text-gray-700 border-t border-gray-100 pt-3 mt-1">
-                                  <span className="font-semibold text-gray-900">Outcome: </span>
-                                  {detail.outcome}
-                                </p>
+                              >
+                                <span
+                                  className={`font-semibold text-sm transition-colors duration-150 ${
+                                    isOpen ? 'text-[#c96d12]' : 'text-gray-800'
+                                  }`}
+                                >
+                                  {detail.title}
+                                </span>
+                                <ChevronDown
+                                  className={`w-4 h-4 shrink-0 transition-all duration-200 ${
+                                    isOpen ? 'rotate-180 text-[#ed8416]' : 'text-gray-300'
+                                  }`}
+                                />
+                              </button>
+
+                              {/* Smooth CSS slide */}
+                              <div
+                                className="overflow-hidden transition-all duration-300 ease-in-out"
+                                style={{ maxHeight: isOpen ? '600px' : '0px' }}
+                              >
+                                <div className="px-6 pb-5 border-t border-orange-100 bg-orange-50/25">
+                                  <p className="text-gray-600 text-sm leading-relaxed pt-4 mb-3">
+                                    {detail.summary}
+                                  </p>
+                                  <ul className="space-y-2.5 mb-4">
+                                    {detail.points.map((point) => (
+                                      <li key={point} className="flex items-start gap-2.5 text-sm text-gray-600">
+                                        <CheckCircle className="w-3.5 h-3.5 text-[#ed8416] shrink-0 mt-[3px]" />
+                                        {point}
+                                      </li>
+                                    ))}
+                                  </ul>
+                                  {/* Outcome box */}
+                                  <div className="flex items-start gap-3 bg-white border border-orange-200/60 rounded-xl px-4 py-3 shadow-[0_1px_4px_rgba(237,132,22,0.07)]">
+                                    <span className="text-[#ed8416] font-bold text-sm mt-0.5">→</span>
+                                    <p className="text-sm text-gray-700 leading-relaxed">
+                                      <span className="font-semibold text-gray-900">Outcome: </span>
+                                      {detail.outcome}
+                                    </p>
+                                  </div>
+                                </div>
                               </div>
-                            )}
-                          </div>
-                        )
-                      })}
+                            </div>
+                          )
+                        })}
+                      </div>
                     </div>
+
                   </div>
                 </motion.article>
               )
@@ -413,20 +450,37 @@ export default function BusinessIntelligenceAndAnalytics() {
         </div>
       </section>
 
-      <section className="py-20 bg-gradient-to-br from-[#ed8416] to-[#9d5710]">
-        <div className="max-w-3xl mx-auto px-6 text-center">
-          <h2 className="text-4xl font-bold text-white mb-4">Turn insights into action</h2>
-          <p className="text-white/80 text-lg mb-8">
-            Talk to our BI experts to build dashboards and reporting that drive better decisions.
-            <br />
-            For a free demo, reach out to us.
-          </p>
-          <a
-            href="mailto:sales@sunfinity.tech"
-            className="inline-flex items-center gap-2 bg-white text-[#ed8416] px-10 py-4 rounded-xl font-semibold hover:bg-gray-50 transition-colors shadow-lg"
+      {/* ── CTA ── */}
+      <section className="py-24 bg-gradient-to-br from-[#ed8416] to-[#7a3f08] relative overflow-hidden">
+        <div
+          className="absolute inset-0 opacity-10"
+          style={{
+            backgroundImage:
+              'linear-gradient(rgba(255,255,255,.3) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.3) 1px, transparent 1px)',
+            backgroundSize: '60px 60px',
+          }}
+        />
+        <div className="absolute -top-20 -right-20 w-80 h-80 rounded-full bg-white/5 blur-3xl pointer-events-none" />
+        <div className="relative max-w-2xl mx-auto px-6 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
           >
-            Contact Us
-          </a>
+            <h2 className="text-4xl md:text-5xl font-black text-white mb-4 tracking-tight leading-tight">
+              Turn insights into action
+            </h2>
+            <p className="text-white/70 text-lg mb-10 leading-relaxed">
+              Talk to our BI experts to build dashboards and reporting that drive better decisions.
+            </p>
+            <a
+              href="mailto:sales@sunfinity.tech"
+              className="inline-flex items-center gap-2 bg-white text-[#ed8416] px-10 py-4 rounded-xl font-bold hover:bg-orange-50 transition-colors shadow-xl text-base"
+            >
+              Reach out for a free demo
+            </a>
+          </motion.div>
         </div>
       </section>
 

@@ -32,7 +32,7 @@ export default function Podcasts() {
             <h1 className="text-4xl md:text-6xl font-black text-white mb-6">Podcasts</h1>
             <p className="text-2xl md:text-3xl font-semibold text-white/90 mb-4">Coming soon</p>
             <p className="text-stone-400 text-lg leading-relaxed max-w-xl mx-auto">
-              We are preparing conversations on data, sales engineering, and building teams in the AI era. Stay Tuned.
+              We are preparing conversations on data, sales engineering, and building teams in the AI era. <br></br>Stay Tuned.
             </p>
           </motion.div>
         </div>

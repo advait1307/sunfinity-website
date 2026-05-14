@@ -36,10 +36,6 @@ export default function Navigation() {
             <Link to="/" className={linkClass('/')}>Home</Link>
             <Link to="/about" className={linkClass('/about')}>About</Link>
             <Link to="/partnerships" className={linkClass('/partnerships')}>Partnerships</Link>
-            <Link to="/blogs" className={linkClass('/blogs')}>Blog</Link>
-            <Link to="/podcasts" className={linkClass('/podcasts')}>Podcasts</Link>
-
-            {/* Services dropdown */}
             <div
               className="relative group"
               onMouseEnter={() => setServicesOpen(true)}
@@ -77,6 +73,8 @@ export default function Navigation() {
                 </div>
               )}
             </div>
+            <Link to="/blogs" className={linkClass('/blogs')}>Blog</Link>
+            <Link to="/podcasts" className={linkClass('/podcasts')}>Podcasts</Link>
 
             {/* <Link to="/careers" className={linkClass('/careers')}>Careers</Link> */}
 

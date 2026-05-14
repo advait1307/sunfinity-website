@@ -3,6 +3,8 @@ import { GraduationCap, TrendingUp, Target, CheckCircle, Quote } from 'lucide-re
 import Navigation from '../components/Navigation'
 import Footer from '../components/Footer'
 import PresalesGears from '../components/PresalesGears'
+import SESkillsFramework from '../components/SkillsFrameWork'
+
 
 const essentialSkills = [
   'Technical Win',
@@ -165,7 +167,7 @@ export default function UpskillingServices() {
         </div>
       </section>
 
-      
+      <SESkillsFramework />
 
       {/* CTA */}
       <section className="py-20 bg-gradient-to-br from-[#ed8416] to-[#9d5710]">
@@ -183,6 +185,7 @@ export default function UpskillingServices() {
           </a>
         </div>
       </section>
+      
 
       <Footer />
     </div>
