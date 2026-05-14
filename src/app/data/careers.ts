@@ -15,30 +15,6 @@ export const jobListings: JobListing[] = [
   //   summary:
   //     'Design and operate cloud data pipelines, partner with analytics on modeling, and help clients harden reliability and cost on the modern stack.',
   // },
-  // {
-  //   id: 'SF-2026-015',
-  //   title: 'Analytics Consultant (Tableau / BI)',
-  //   location: 'Mumbai · Remote-friendly',
-  //   type: 'Full-time',
-  //   summary:
-  //     'Lead dashboard design sessions, translate business questions into metrics, and deliver governed self-service analytics for enterprise teams.',
-  // },
-  // {
-  //   id: 'SF-2026-016',
-  //   title: 'Solutions Engineer — Data Platforms',
-  //   location: 'Pune',
-  //   type: 'Full-time',
-  //   summary:
-  //     'Support technical sales cycles, build proofs of concept, and articulate architecture for Postgres, Elastic, and adjacent ecosystem tools.',
-  // },
-  // {
-  //   id: 'SF-2026-017',
-  //   title: 'Learning & Enablement Specialist',
-  //   location: 'Remote (India)',
-  //   type: 'Full-time',
-  //   summary:
-  //     'Curriculum design and delivery for data and analytics upskilling programs; collaborate with SMEs to keep content current and measurable.',
-  // },
 ]
 
 const TO = 'sales@sunfinity.tech'

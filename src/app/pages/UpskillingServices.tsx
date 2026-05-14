@@ -175,13 +175,12 @@ export default function UpskillingServices() {
           <h2 className="text-4xl font-bold text-white mb-4">Equip your team to win more deals</h2>
           <p className="text-white/80 text-lg mb-8">
             Let's discuss how the SIQ program can transform your technical sales team. 
-            <br></br>For a free skill assessment, reach out to us.
           </p>
           <a
             href="mailto:sales@sunfinity.tech"
             className="inline-flex items-center gap-2 bg-white text-[#ed8416] px-10 py-4 rounded-xl font-semibold hover:bg-gray-50 transition-colors shadow-lg"
           >
-            Contact Us
+            Reach out for a free skill assessment
           </a>
         </div>
       </section>
