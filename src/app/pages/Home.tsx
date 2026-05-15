@@ -29,16 +29,6 @@ const services = [
     image: '/images/Advanced Data Services .jpg',
   },
   {
-    icon: TrendingUp,
-    title: 'UpSkilling Services',
-    tagline: 'Complex Sales, Simplified',
-    description:
-      'We equip technical sales teams with the Sellers Interpersonal Quotient (SIQ) — the force multiplier that turns technical excellence into closed deals.',
-    to: '/upskilling-services',
-    color: 'from-amber-500 to-orange-600',
-    image: '/images/upskilling.jpg',
-  },
-  {
     icon: BarChart2,
     title: 'Business Intelligence & Analytics',
     tagline: 'Business Analytics, Simplified',
@@ -47,6 +37,16 @@ const services = [
     to: '/business-intelligence-and-analytics',
     color: 'from-orange-600 to-red-600',
     image: '/images/business-intelligence.jpg',
+  },
+  {
+    icon: TrendingUp,
+    title: 'UpSkilling Services',
+    tagline: 'Complex Sales, Simplified',
+    description:
+      'We equip technical sales teams with the Sellers Interpersonal Quotient (SIQ) — the force multiplier that turns technical excellence into closed deals.',
+    to: '/upskilling-services',
+    color: 'from-amber-500 to-orange-600',
+    image: '/images/upskilling.jpg',
   },
 ]
 
@@ -104,8 +104,8 @@ export default function Home() {
             <div className="grid md:grid-cols-3 gap-4 max-w-4xl mx-auto mb-12">
               {[
                 { label: 'Complex Data, Simplified'},
-                { label: 'Complex Sales, Simplified'},
                 { label: 'Business Analytics, Simplified'},
+                { label: 'Complex Sales, Simplified'},
               ].map((p) => (
                 <motion.div
                   key={p.label}
