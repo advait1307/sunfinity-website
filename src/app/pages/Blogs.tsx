@@ -48,9 +48,9 @@ export default function Blogs() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.45, delay: idx * 0.06 }}
-                className="group bg-white rounded-2xl border border-stone-200/90 shadow-[0_1px_3px_rgba(0,0,0,0.06)] hover:shadow-md hover:border-stone-300/90 transition-all overflow-hidden"
+                className="group flex flex-col h-full bg-white rounded-2xl border border-stone-200/90 shadow-[0_1px_3px_rgba(0,0,0,0.06)] hover:shadow-md hover:border-stone-300/90 transition-all overflow-hidden"
               >
-                <div className="p-8 md:p-10">
+                <div className="flex flex-col flex-1 p-8 md:p-10">
                   <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-stone-500 mb-5">
                     <span className="inline-flex items-center gap-1.5">
                       <Calendar className="w-4 h-4 text-[#ed8416]" />
@@ -75,10 +75,10 @@ export default function Blogs() {
                       {post.title}
                     </Link>
                   </h2>
-                  <p className="text-stone-600 leading-relaxed text-[1.05rem] mb-6">{post.excerpt}</p>
+                  <p className="text-stone-600 leading-relaxed text-[1.05rem] mb-6 flex-1">{post.excerpt}</p>
                   <Link
                     to={`/blogs/${post.slug}`}
-                    className="inline-flex items-center gap-2 text-[#ed8416] font-semibold hover:text-[#c96d12] transition-colors"
+                    className="inline-flex items-center gap-2 text-[#ed8416] font-semibold hover:text-[#c96d12] transition-colors mt-auto"
                   >
                     Read article
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />

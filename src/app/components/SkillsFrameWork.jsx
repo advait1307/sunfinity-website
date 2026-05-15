@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useLayoutEffect, useRef, useState } from "react";
 
 const tiers = [
   {
@@ -50,6 +50,31 @@ const tiers = [
 
 export default function SESkillsFramework() {
   const [hovered, setHovered] = useState(null);
+  const cardsGridRef = useRef(null);
+  const [cardColumns, setCardColumns] = useState(3);
+
+  useLayoutEffect(() => {
+    const el = cardsGridRef.current;
+    if (!el) return;
+    const minCol = 260;
+    const gap = 20;
+    const maxCols = 3;
+    const compute = () => {
+      const w = el.getBoundingClientRect().width;
+      const n = Math.max(1, Math.min(maxCols, Math.floor((w + gap) / (minCol + gap))));
+      setCardColumns((prev) => (prev === n ? prev : n));
+    };
+    compute();
+    const ro = new ResizeObserver(compute);
+    ro.observe(el);
+    return () => ro.disconnect();
+  }, []);
+
+  const handleTierLeave = (e, tierId) => {
+    const next = e.relatedTarget;
+    if (next instanceof Element && next.closest(`[data-tier="${tierId}"]`)) return;
+    setHovered(null);
+  };
 
   return (
     <section style={{
@@ -90,52 +115,97 @@ export default function SESkillsFramework() {
         ))}
       </div>
 
-      {/* Cards */}
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: 20, maxWidth: 1100, margin: "0 auto" }}>
-        {tiers.map((tier) => (
-          <div
-            key={tier.id}
-            onMouseEnter={() => setHovered(tier.id)}
-            onMouseLeave={() => setHovered(null)}
-            style={{
-              borderRadius: 12,
-              overflow: "hidden",
-              border: "0.5px solid rgba(0,0,0,0.1)",
-              display: "flex",
-              flexDirection: "column",
-              transition: "transform 0.2s, box-shadow 0.2s",
-              transform: hovered === tier.id ? "translateY(-4px)" : "translateY(0)",
-              boxShadow: hovered === tier.id ? "0 16px 40px rgba(0,0,0,0.13)" : "0 2px 12px rgba(0,0,0,0.06)",
-            }}
-          >
-            {/* Card body — all orange */}
-            <div style={{ background: tier.color, padding: "22px 20px 20px", flex: 1, display: "flex", flexDirection: "column" }}>
-              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 16 }}>
-                <div style={{ background: "rgba(255,255,255,0.2)", borderRadius: 12, padding: "8px 10px", fontSize: 22, lineHeight: 1 }}>
-                  {tier.icon}
+      {/* Cards — orange segments share one grid row per band, yellow the next; guarantees one horizontal line for footer tops */}
+      <div
+        ref={cardsGridRef}
+        style={{
+          display: "grid",
+          gridTemplateColumns: `repeat(${cardColumns}, minmax(0, 1fr))`,
+          columnGap: 20,
+          rowGap: 0,
+          maxWidth: 1100,
+          margin: "0 auto",
+        }}
+      >
+        {tiers.map((tier, i) => {
+          const col = (i % cardColumns) + 1;
+          const band = Math.floor(i / cardColumns);
+          const rowMain = band * 2 + 1;
+          const rowFoot = band * 2 + 2;
+          const isHover = hovered === tier.id;
+          const lift = isHover ? "translateY(-4px)" : "translateY(0)";
+          const shadow = isHover ? "0 16px 40px rgba(0,0,0,0.13)" : "0 2px 12px rgba(0,0,0,0.06)";
+          return (
+            <div key={tier.id} style={{ display: "contents" }}>
+              <div
+                data-tier={tier.id}
+                onMouseEnter={() => setHovered(tier.id)}
+                onMouseLeave={(e) => handleTierLeave(e, tier.id)}
+                style={{
+                  gridColumn: col,
+                  gridRow: rowMain,
+                  background: tier.color,
+                  padding: "22px 20px 20px",
+                  display: "flex",
+                  flexDirection: "column",
+                  borderRadius: "12px 12px 0 0",
+                  border: "0.5px solid rgba(0,0,0,0.1)",
+                  borderBottom: "none",
+                  boxSizing: "border-box",
+                  transition: "transform 0.2s, box-shadow 0.2s",
+                  transform: lift,
+                  boxShadow: shadow,
+                }}
+              >
+                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 16 }}>
+                  <div style={{ background: "rgba(255,255,255,0.2)", borderRadius: 12, padding: "8px 10px", fontSize: 22, lineHeight: 1 }}>
+                    {tier.icon}
+                  </div>
+                  <span style={{ fontSize: 11, fontWeight: 500, letterSpacing: "1.2px", textTransform: "uppercase", padding: "3px 10px", borderRadius: 20, background: "rgba(0,0,0,0.2)", color: "rgba(255,255,255,0.9)" }}>
+                    Level {tier.level}
+                  </span>
                 </div>
-                <span style={{ fontSize: 11, fontWeight: 500, letterSpacing: "1.2px", textTransform: "uppercase", padding: "3px 10px", borderRadius: 20, background: "rgba(0,0,0,0.2)", color: "rgba(255,255,255,0.9)" }}>
-                  Level {tier.level}
-                </span>
+                <h3 style={{ color: "#fff", fontSize: 18, fontWeight: 700, margin: "0 0 18px" }}>{tier.label}</h3>
+                <p style={{ fontSize: 11, fontWeight: 600, letterSpacing: "2px", textTransform: "uppercase", color: "rgba(255,255,255,0.55)", margin: "0 0 10px" }}>Courses</p>
+                {tier.courses.map((course, j) => (
+                  <div key={j} style={{ display: "flex", alignItems: "flex-start", gap: 10, padding: "8px 0", borderBottom: j < tier.courses.length - 1 ? "0.5px solid rgba(255,255,255,0.15)" : "none", fontSize: 14 }}>
+                    <span style={{ width: 6, height: 6, borderRadius: "50%", background: "rgba(255,255,255,0.6)", flexShrink: 0, marginTop: 6 }} />
+                    <span style={{ color: "#fff", fontWeight: course.linked ? 500 : 400, lineHeight: 1.4 }}>{course.title}</span>
+                  </div>
+                ))}
               </div>
-              <h3 style={{ color: "#fff", fontSize: 18, fontWeight: 700, margin: "0 0 18px" }}>{tier.label}</h3>
-              <p style={{ fontSize: 11, fontWeight: 600, letterSpacing: "2px", textTransform: "uppercase", color: "rgba(255,255,255,0.55)", margin: "0 0 10px" }}>Courses</p>
-              {tier.courses.map((course, i) => (
-                <div key={i} style={{ display: "flex", alignItems: "flex-start", gap: 10, padding: "8px 0", borderBottom: i < tier.courses.length - 1 ? "0.5px solid rgba(255,255,255,0.15)" : "none", fontSize: 14 }}>
-                  <span style={{ width: 6, height: 6, borderRadius: "50%", background: "rgba(255,255,255,0.6)", flexShrink: 0, marginTop: 6 }} />
-                  <span style={{ color: "#fff", fontWeight: course.linked ? 500 : 400, lineHeight: 1.4 }}>{course.title}</span>
-                </div>
-              ))}
+              <div
+                data-tier={tier.id}
+                onMouseEnter={() => setHovered(tier.id)}
+                onMouseLeave={(e) => handleTierLeave(e, tier.id)}
+                style={{
+                  gridColumn: col,
+                  gridRow: rowFoot,
+                  background: "#F5A623",
+                  padding: "12px 20px",
+                  display: "flex",
+                  flexWrap: "wrap",
+                  gap: 8,
+                  rowGap: 8,
+                  alignItems: "center",
+                  alignContent: "flex-start",
+                  borderRadius: "0 0 12px 12px",
+                  border: "0.5px solid rgba(0,0,0,0.1)",
+                  borderTop: "none",
+                  boxSizing: "border-box",
+                  transition: "transform 0.2s, box-shadow 0.2s",
+                  transform: lift,
+                  boxShadow: shadow,
+                  marginBottom: i + cardColumns < tiers.length ? 20 : 0,
+                }}
+              >
+                {tier.audience.map((a, j) => (
+                  <span key={j} style={{ fontSize: 12, fontWeight: 500, lineHeight: 1.25, padding: "4px 10px", borderRadius: 20, background: "rgba(0,0,0,0.1)", color: "#3A1E00", whiteSpace: "nowrap" }}>{a}</span>
+                ))}
+              </div>
             </div>
-
-            {/* Footer — yellow audience tags */}
-            <div style={{ background: "#F5A623", padding: "12px 20px", display: "flex", flexWrap: "wrap", gap: 6, alignItems: "center" }}>
-              {tier.audience.map((a, i) => (
-                <span key={i} style={{ fontSize: 12, fontWeight: 500, padding: "3px 10px", borderRadius: 20, background: "rgba(0,0,0,0.1)", color: "#3A1E00", whiteSpace: "nowrap" }}>{a}</span>
-              ))}
-            </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
     </section>
   );
