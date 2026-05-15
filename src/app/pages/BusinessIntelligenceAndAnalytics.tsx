@@ -26,7 +26,7 @@ const biServiceSections: BIServiceSection[] = [
     title: 'Visualization & Dashboard Development',
     strapline:
       'From KPI dashboards to real-time operations — one trusted view of the metrics that move your business.',
-    imageSrc: '/public/images/visualisation.jpg',   // ← replace with your path
+    imageSrc: '/images/visualisation.jpg',   // ← replace with your path
     imageAlt: 'Visualization & Dashboard Development',
     details: [
       {
@@ -88,7 +88,7 @@ const biServiceSections: BIServiceSection[] = [
     title: 'Reporting & MIS Automation',
     strapline:
       'Replace manual report factories with scheduled, validated, multi-channel delivery — and predictable commercial terms.',
-    imageSrc: '/public/images/MIS_reports.svg',   // ← replace with your path
+    imageSrc: '/images/MIS_reports.svg',   // ← replace with your path
     imageAlt: 'Reporting & MIS Automation',
     details: [
       {
@@ -150,7 +150,7 @@ const biServiceSections: BIServiceSection[] = [
     title: 'Analytics Managed Services',
     strapline:
       'Purpose-built for growing businesses: migrate off Excel, ship useful analytics quickly, and keep everything supported.',
-    imageSrc: '/public/images/advanced-managed-services.jpg',   // ← replace with your path
+    imageSrc: '/images/advanced-managed-services.jpg',   // ← replace with your path
     imageAlt: 'Analytics Managed Services',
     details: [
       {
