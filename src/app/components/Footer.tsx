@@ -39,7 +39,7 @@ export default function Footer() {
               className="inline-flex items-center gap-2 mt-6 text-sm text-gray-400 hover:text-[#ed8416] transition-colors"
             >
               <Linkedin className="w-4 h-4 text-[#ed8416]" />
-              Follow on LinkedIn
+              Follow us on LinkedIn
             </a>
           </div>
 

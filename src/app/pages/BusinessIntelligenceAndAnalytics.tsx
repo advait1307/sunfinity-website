@@ -30,7 +30,7 @@ const biServiceSections: BIServiceSection[] = [
     imageAlt: 'Visualization & Dashboard Development',
     details: [
       {
-        title: 'KPI dashboards',
+        title: 'KPI Dashboards',
         summary:
           'Most organizations have data; few have a single, trusted view of the numbers that drive the business. We design KPI dashboards that replace spreadsheet chaos and conflicting reports with one authoritative source of truth.',
         points: [
@@ -43,7 +43,7 @@ const biServiceSections: BIServiceSection[] = [
           'A single, trusted KPI dashboard your entire organization uses as the starting point for every performance conversation.',
       },
       {
-        title: 'Executive reporting',
+        title: 'Executive Reporting',
         summary:
           'Leadership needs the right data in the right format at the right time — not more raw data. We build executive reporting that delivers board-level clarity automatically.',
         points: [
@@ -56,7 +56,7 @@ const biServiceSections: BIServiceSection[] = [
           'Executive reporting that runs itself — saving dozens of hours per month while sharpening visibility into performance.',
       },
       {
-        title: 'Self-service analytics',
+        title: 'Self-service Analytics',
         summary:
           'When every question routes through the analytics team, the team drowns and the business waits. We put governed exploration in the hands of business users — safely, without SQL.',
         points: [
@@ -69,7 +69,7 @@ const biServiceSections: BIServiceSection[] = [
           'Business teams answer their own questions in minutes — and analytics focuses on deeper, higher-value work.',
       },
       {
-        title: 'Real-time insights',
+        title: 'Real-time Insights',
         summary:
           'In fast-moving operations, stale data misleads. We build pipelines and dashboards that close the gap between what is happening and what you know.',
         points: [
@@ -92,7 +92,7 @@ const biServiceSections: BIServiceSection[] = [
     imageAlt: 'Reporting & MIS Automation',
     details: [
       {
-        title: 'Automated reporting',
+        title: 'Automated Reporting',
         summary:
           'Skilled people still spend hours pulling data, formatting spreadsheets, and emailing reports that are stale on arrival. We replace that with pipelines that run on schedule, accurately, without manual steps.',
         points: [
@@ -105,7 +105,7 @@ const biServiceSections: BIServiceSection[] = [
           'Hours of manual reporting removed every week — replaced by a pipeline the business can depend on.',
       },
       {
-        title: 'MIS dashboards',
+        title: 'MIS Dashboards',
         summary:
           'MIS is only valuable when information is timely, accurate, and aligned to real management decisions. We build dashboards around your hierarchy, reporting lines, and accountability metrics.',
         points: [
@@ -118,7 +118,7 @@ const biServiceSections: BIServiceSection[] = [
           'A management reporting layer the organization trusts — consistent, accurate, and built for daily decisions.',
       },
       {
-        title: 'Smart bundles',
+        title: 'Smart Bundles',
         summary:
           'Starting from scratch is slow and expensive. Our bundles combine models, KPIs, templates, and automation so you go live in weeks without sacrificing quality.',
         points: [
@@ -131,7 +131,7 @@ const biServiceSections: BIServiceSection[] = [
           'Production-ready reporting at speed — without long blank-canvas scoping and premium custom-only pricing.',
       },
       {
-        title: 'Predictable pricing',
+        title: 'Predictable Pricing',
         summary:
           'Consulting and data work often suffer scope creep and surprise invoices. Our reporting and MIS offerings use fixed, transparent pricing so you know scope and cost before you start.',
         points: [
@@ -154,7 +154,7 @@ const biServiceSections: BIServiceSection[] = [
     imageAlt: 'Analytics Managed Services',
     details: [
       {
-        title: 'Excel migration',
+        title: 'Excel Migration',
         summary:
           'Excel is powerful until version conflicts, broken formulas, and unclear source of truth slow everyone down. We move you to a structured, automated stack with a controlled transition.',
         points: [
@@ -167,7 +167,7 @@ const biServiceSections: BIServiceSection[] = [
           'A clean break from spreadsheet chaos — critical reports replicated, automated, and reliable from go-live.',
       },
       {
-        title: 'Small business focused',
+        title: 'Small Business Focused',
         summary:
           'Most vendors optimize for enterprises with big data teams and budgets. We scope, price, and support analytics for organizations that need outcomes without enterprise overhead.',
         points: [
@@ -180,7 +180,7 @@ const biServiceSections: BIServiceSection[] = [
           'Analytics capability fit for a much larger company — without building an in-house data department first.',
       },
       {
-        title: 'Affordable packages',
+        title: 'Affordable Packages',
         summary:
           'Analytics should not be a luxury. Tiered packages give growing businesses enterprise-quality capability at a predictable monthly cost.',
         points: [
@@ -193,7 +193,7 @@ const biServiceSections: BIServiceSection[] = [
           'Real analytics at a price you can commit to — with full visibility into what is included every month.',
       },
       {
-        title: 'Ongoing support',
+        title: 'Ongoing Support',
         summary:
           'A dashboard handed over is not the same as a capability that lasts. Data and questions change; we stay embedded to adapt, fix, and extend.',
         points: [
@@ -260,7 +260,7 @@ export default function BusinessIntelligenceAndAnalytics() {
             transition={{ duration: 0.6 }}
           >
             <p className="text-gray-600 text-lg md:text-xl leading-relaxed mb-8">
-              Simplify raw numbers into actionable stories with our{' '}
+              Simplifying raw numbers into actionable stories with our{' '}
               <span className="text-gray-900 font-semibold">BI &amp; Analytics</span> services. Powered by{' '}
               <span className="text-gray-900 font-semibold">Tableau</span>, we help you become a more data-driven
               organization.

@@ -6,7 +6,7 @@ const tiers = [
     label: "Fundamentals",
     level: 1,
     color: "#E07B00",
-    icon: "🧎",
+    icon: "",
     audience: ["First time SE", "CSM", "Freshers", "Partners"],
     courses: [
       { title: "Business Value Discovery", linked: true },
@@ -93,7 +93,7 @@ export default function SESkillsFramework() {
         <h2 style={{ fontSize: "clamp(26px, 4vw, 36px)", fontWeight: 700, margin: "0 0 10px" }}>
           SE Skills Framework
         </h2>
-        <p style={{ fontSize: "15px", color: "#666", maxWidth: "520px", margin: "0 auto", lineHeight: 1.6 }}>
+        <p style={{ fontSize: "15px", color: "#666", maxWidth: "400px", margin: "0 auto", lineHeight: 1.6 }}>
           A structured journey from foundational knowledge to enterprise-level expertise.
         </p>
       </div>

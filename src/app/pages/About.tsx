@@ -81,10 +81,10 @@ export default function About() {
                 Enterprise expertise.<br />Startup agility.
               </h2>
               <p className="text-gray-600 leading-relaxed mb-5">
-                Built on a foundation of deep industry expertise, Sunfinity is founded and led by veterans from global giants like <strong>Wipro, HPE, Dell EMC, UI Path, Commvault, FIS</strong> and <strong>TCS</strong>. The company combines the agility of a startup with the strategic sophistication of seasoned IT leadership.
+                Built on a foundation of deep industry expertise, Sunfinity is founded by veterans from global giants like <strong>Wipro, HPE, Dell EMC, UI Path, Commvault, FIS</strong> and <strong>TCS</strong>. The company combines the agility of a startup with the strategic sophistication of seasoned IT leadership.
               </p>
               <p className="text-gray-600 leading-relaxed mb-5">
-                At its core, Sunfinity is dedicated to simplifying complexity — whether that is in the intricate world of Data management or the demanding landscape of modern technical sales.
+                At its core, Sunfinity is dedicated to simplifying complexity — whether that is in the intricate world of data management or the demanding landscape of modern technical sales.
               </p>
               <p className="text-gray-600 leading-relaxed">
                 We operate as a high-impact partner for organisations looking to bridge the gap between technical capability and business value.

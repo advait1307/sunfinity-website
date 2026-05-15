@@ -29,8 +29,8 @@ export default function Podcasts() {
             {/* <span className="inline-block text-[#ed8416] text-sm font-semibold uppercase tracking-widest mb-4">
               Audio
             </span> */}
-            <h1 className="text-4xl md:text-6xl font-black text-white mb-6">Podcasts</h1>
-            <p className="text-2xl md:text-3xl font-semibold text-white/90 mb-4">Coming soon</p>
+            <h1 className="text-4xl md:text-6xl font-black text-white mb-6">Podcast</h1>
+            <p className="text-2xl md:text-3xl font-semibold text-white/90 mb-4">Coming Soon</p>
             <p className="text-stone-400 text-lg leading-relaxed max-w-xl mx-auto">
               We are preparing conversations on data, sales engineering, and building teams in the AI era. <br></br>Stay Tuned.
             </p>

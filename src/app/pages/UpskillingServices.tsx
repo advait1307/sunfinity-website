@@ -10,8 +10,8 @@ const essentialSkills = [
   'Technical Win',
   'Building Trust',
   'Validation',
-  'Value-first conversations',
-  'Driving revenue through lasting relationships',
+  'Value-first Conversations',
+  'Driving Revenue through Lasting Relationships',
 ]
 
 const verticals = [
@@ -72,13 +72,13 @@ export default function UpskillingServices() {
             >
               <span className="text-[#ed8416] font-semibold text-sm uppercase tracking-widest">The Force Multiplier</span>
               <h2 className="text-4xl font-bold text-gray-900">
-                Where technical excellence meets human connection
+                Where Technical Excellence Meets Human Connection
               </h2>
               <p className="text-gray-600 leading-relaxed">
-                Solution Engineers are pivotal in driving value-sales. For a presales team, technical excellence is a <strong>"must"</strong> — however soft skills are the <strong>"force multiplier."</strong>
+                Solution Engineers are pivotal in driving value-sales. For a presales team, technical excellence is a <strong>must</strong> — however soft skills are the <strong>force multiplier.</strong>
               </p>
               <p className="text-gray-600 leading-relaxed">
-                The team may be able to architect a complex hybrid cloud solution or a data management ecosystem, but the deal is often won or lost based on how that solution is communicated, contextualized, and connected to the buyer's pain points.
+                The team may be able to architect a complex hybrid cloud solution or a data management ecosystem, but the success of the deal is often based on how that solution is communicated, contextualized, and connected to the buyer's pain points.
               </p>
 
               {/* Stats */}
@@ -180,7 +180,7 @@ export default function UpskillingServices() {
             href="mailto:sales@sunfinity.tech"
             className="inline-flex items-center gap-2 bg-white text-[#ed8416] px-10 py-4 rounded-xl font-semibold hover:bg-gray-50 transition-colors shadow-lg"
           >
-            Reach out for a free skill assessment
+            Reach Out for a Free Skill Assessment
           </a>
         </div>
       </section>

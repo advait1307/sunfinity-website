@@ -74,7 +74,7 @@ export default function Navigation() {
             </div>
             <Link to="/partnerships" className={linkClass('/partnerships')}>Partnerships</Link>
             <Link to="/blogs" className={linkClass('/blogs')}>Blog</Link>
-            <Link to="/podcasts" className={linkClass('/podcasts')}>Podcasts</Link>
+            <Link to="/podcasts" className={linkClass('/podcasts')}>Podcast</Link>
 
             {/* <Link to="/careers" className={linkClass('/careers')}>Careers</Link> */}
 

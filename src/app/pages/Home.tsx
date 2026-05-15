@@ -33,7 +33,7 @@ const services = [
     title: 'Business Intelligence & Analytics',
     tagline: 'Business Analytics, Simplified',
     description:
-      'Simplify raw numbers into actionable stories with our BI and Analytics services. Powered by Tableau, we help you transform into an AI and data driven organization.',
+      'Simplifying raw numbers into actionable stories with our BI and Analytics services. Powered by Tableau, we help you transform into an AI and data driven organization.',
     to: '/business-intelligence-and-analytics',
     color: 'from-orange-600 to-red-600',
     image: '/images/business-intelligence.jpg',
@@ -131,12 +131,12 @@ export default function Home() {
               >
                 Explore Services <ChevronRight className="w-5 h-5" />
               </Link>
-              <a
+              {/* <a
                 href="mailto:sales@sunfinity.tech"
                 className="inline-flex items-center gap-2 border-2 border-white/60 text-white px-8 py-4 rounded-xl font-semibold hover:bg-white/10 transition-colors"
               >
                 Get in Touch <ArrowRight className="w-5 h-5" />
-              </a>
+              </a> */}
             </motion.div>
           </motion.div>
         </div>

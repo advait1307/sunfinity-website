@@ -7,14 +7,14 @@ export type JobListing = {
 }
 
 export const jobListings: JobListing[] = [
-  // {
-  //   id: 'SF-2026-014',
-  //   title: 'Senior Data Engineer',
-  //   location: 'Pune / Hybrid',
-  //   type: 'Full-time',
-  //   summary:
-  //     'Design and operate cloud data pipelines, partner with analytics on modeling, and help clients harden reliability and cost on the modern stack.',
-  // },
+  {
+    id: 'SF-2026-014',
+    title: 'Senior Data Engineer',
+    location: 'Pune / Hybrid',
+    type: 'Full-time',
+    summary:
+      'Design and operate cloud data pipelines, partner with analytics on modeling, and help clients harden reliability and cost on the modern stack.',
+  },
 ]
 
 const TO = 'sales@sunfinity.tech'
