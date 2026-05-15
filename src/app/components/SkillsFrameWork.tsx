@@ -1,4 +1,4 @@
-import { useLayoutEffect, useRef, useState } from "react";
+import { useLayoutEffect, useRef, useState, type MouseEvent } from 'react'
 
 const tiers = [
   {
@@ -49,8 +49,8 @@ const tiers = [
 ];
 
 export default function SESkillsFramework() {
-  const [hovered, setHovered] = useState(null);
-  const cardsGridRef = useRef(null);
+  const [hovered, setHovered] = useState<string | null>(null)
+  const cardsGridRef = useRef<HTMLDivElement>(null)
   const [cardColumns, setCardColumns] = useState(3);
 
   useLayoutEffect(() => {
@@ -70,7 +70,7 @@ export default function SESkillsFramework() {
     return () => ro.disconnect();
   }, []);
 
-  const handleTierLeave = (e, tierId) => {
+  const handleTierLeave = (e: MouseEvent, tierId: string) => {
     const next = e.relatedTarget;
     if (next instanceof Element && next.closest(`[data-tier="${tierId}"]`)) return;
     setHovered(null);
