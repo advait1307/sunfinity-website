@@ -244,7 +244,7 @@ export default function BusinessIntelligenceAndAnalytics() {
               Business Intelligence & Analytics
             </h1>
             <p className="text-white/75 text-xl max-w-2xl mx-auto leading-relaxed">
-              Visualization · Reporting · Managed Services
+            Accelerating business with advanced data visualization
             </p>
           </motion.div>
         </div>
@@ -377,9 +377,9 @@ export default function BusinessIntelligenceAndAnalytics() {
                         <span className="text-[10px] font-bold uppercase tracking-[0.22em] text-[#ed8416]">
                           Capabilities
                         </span>
-                        <span className="text-[10px] text-gray-400 font-medium">
+                        {/* <span className="text-[10px] text-gray-400 font-medium">
                           {service.details.length} topics
-                        </span>
+                        </span> */}
                       </div>
 
                       {/* Accordion items */}

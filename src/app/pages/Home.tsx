@@ -26,14 +26,14 @@ const services = [
       'End-to-end database services — consulting, implementation, migration, and managed services. Core expertise in PostgreSQL, MongoDB, and Elastic across commercial and community versions.',
     to: '/advanced-data-services',
     color: 'from-orange-500 to-amber-600',
-    image: '/images/Advanced Data Services .jpg',
+    image: '/images/Advanced Data Services.jpg',
   },
   {
     icon: BarChart2,
     title: 'Business Intelligence & Analytics',
     tagline: 'Business Analytics, Simplified',
     description:
-      'Simplifying raw numbers into actionable stories with our BI and Analytics services. Powered by Tableau, we help you transform into an AI and data driven organization.',
+      'Transforming raw numbers into actionable stories with industry-leading BI and Analytics services. Powered by Tableau, enabling businesses to become an AI and data driven organizations.',
     to: '/business-intelligence-and-analytics',
     color: 'from-orange-600 to-red-600',
     image: '/images/business-intelligence.jpg',
@@ -43,7 +43,7 @@ const services = [
     title: 'UpSkilling Services',
     tagline: 'Complex Sales, Simplified',
     description:
-      'We equip technical sales teams with the Sellers Interpersonal Quotient (SIQ) — the force multiplier that turns technical excellence into closed deals.',
+      'Equipping technical sales teams with the Sellers Interpersonal Quotient (SIQ) — the force multiplier that turns technical excellence into closed deals.',
     to: '/upskilling-services',
     color: 'from-amber-500 to-orange-600',
     image: '/images/upskilling.jpg',
@@ -83,16 +83,17 @@ export default function Home() {
             transition={{ duration: 0.8 }}
           >
             {/* Logo */}
-            <div className="flex justify-center mb-1">
-              <div className="h-14 overflow-hidden flex items-center">
+            <div className="flex justify-center mb-2">
+              <div className="h-36 overflow-hidden">
                 <img
-                  src="/images/sunfinity-logo.png"
+                  src="/images/sunfinity-logo-main-header.png"
                   alt="Sunfinity Technology Solutions"
-                  className="h-40 w-auto object-contain"
+                  className="w-auto object-cover object-center"
+                  style={{ height: '280px', marginTop: '-30px' }}
                 />
               </div>
             </div>
-
+        
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-white leading-tight mb-6 tracking-tight">
               Simplifying<br />The Complex
             </h1>
@@ -103,9 +104,9 @@ export default function Home() {
             {/* Three pillars */}
             <div className="grid md:grid-cols-3 gap-4 max-w-4xl mx-auto mb-12">
               {[
-                { label: 'Complex Data, Simplified'},
-                { label: 'Business Analytics, Simplified'},
-                { label: 'Complex Sales, Simplified'},
+                { label: 'Complex Data'},
+                { label: 'Business Analytics'},
+                { label: 'Technical Sales'},
               ].map((p) => (
                 <motion.div
                   key={p.label}
@@ -200,7 +201,7 @@ export default function Home() {
                       <img
                         src={service.image}
                         alt={`${service.title} visual`}
-                        className="w-full h-full object-cover"
+                        className="w-full h-[350px]  object-cover"
                       />
                       <div className="absolute inset-0 bg-[#ed8416]/20 mix-blend-multiply pointer-events-none" />
                     </div>

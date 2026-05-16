@@ -10,7 +10,7 @@ export const postgresqlSecurityPost: BlogPost = {
     'PostgreSQL security hardening for regulated industries: row-level security, audit logging, and encryption at rest',
   excerpt:
     'Running PostgreSQL in banking, insurance, or payments means controls beyond the app layer. Walk through authentication, authorisation, pgaudit, and encryption — with a checklist you can use before production.',
-  date: '2026-05-10',
+  date: '2026-05-15',
   readTime: '11 min read',
   author: 'Sunfinity Data Engineering',
   publicationLine: 'Sunfinity Technology Solutions | Data Engineering Blog',

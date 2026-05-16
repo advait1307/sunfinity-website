@@ -22,21 +22,24 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-6 lg:px-8 pt-16 pb-10">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-10 pb-14 border-b border-gray-800/80">
           <div className="lg:col-span-4">
-            <Link to="/" className="inline-block mb-5">
-              <img
-                src="/images/sunfinity-logo.png"
-                alt="Sunfinity Technology Solutions"
-                className="h-16 w-auto object-contain brightness-0 invert"
-              />
+            <Link to="/" className="inline-block mb-2">
+            <div className="h-30 overflow-hidden">  {/* controls how much from top is visible */}
+            <img
+              src="/images/sunfinity-logo-footer.png"
+              alt="Sunfinity Technology Solutions"
+              className="w-auto object-cover object-top" 
+              style={{ height: '140px' }}
+            />
+          </div>
             </Link>
             <p className="text-gray-400 text-sm leading-relaxed max-w-sm">
-              Simplifying the complex — data, sales, and talent for the AI-driven world.
+              {/* Simplifying the complex — data, sales, and talent for the AI-driven world. */}
             </p>
             <a
               href="https://www.linkedin.com/company/sunfintech/"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 mt-6 text-sm text-gray-400 hover:text-[#ed8416] transition-colors"
+              className="inline-flex items-center gap-1 mt-1 text-sm text-gray-400 hover:text-[#ed8416] transition-colors"
             >
               <Linkedin className="w-4 h-4 text-[#ed8416]" />
               Follow us on LinkedIn

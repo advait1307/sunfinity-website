@@ -25,19 +25,19 @@ const dbServiceSections: ServiceSection[] = [
     icon: Database,
     title: 'Database Consulting',
     strapline: 'Technology, licensing, architecture, and total-cost decisions with confidence.',
-    imageSrc: '/images/Advanced Data Services .jpg',
+    imageSrc: '/images/database-consulting.jpg',
     imageAlt: 'Database consulting and architecture',
     details: [
       {
-        title: 'Technology Selection',
+        title: 'Architecture Review',
         summary:
-          'Choosing the wrong database can create years of technical debt. We run a structured, vendor-neutral evaluation shaped by your workload, operating model, and long-term scalability.',
+          'Architectures that work at 10,000 users can fail silently at 10 million. We uncover structural risks before they become incidents.',
         points: [
-          'Evaluate relational, NoSQL, NewSQL, time-series, and graph options against real query patterns',
-          'Factor in team capability, operational maturity, and maintainability — not only raw performance',
-          'Applicable for greenfield builds, legacy migrations, and modernization initiatives',
+          'Assess schema design, indexing strategy, replication topology, and failover readiness',
+          'Review query behavior against your SLA and throughput profile',
+          'Deliver prioritized remediations your team can execute immediately',
         ],
-        outcome: 'A clear, justified technology recommendation with scoring rationale and adoption roadmap.',
+        outcome: 'A practical resilience and scalability roadmap tuned to your real growth trajectory.',
       },
       {
         title: 'Licensing Advisory',
@@ -51,17 +51,6 @@ const dbServiceSections: ServiceSection[] = [
         outcome: 'Actionable licensing guidance that protects cost and compliance before an audit forces action.',
       },
       {
-        title: 'Architecture Review',
-        summary:
-          'Architectures that work at 10,000 users can fail silently at 10 million. We uncover structural risks before they become incidents.',
-        points: [
-          'Assess schema design, indexing strategy, replication topology, and failover readiness',
-          'Review query behavior against your SLA and throughput profile',
-          'Deliver prioritized remediations your team can execute immediately',
-        ],
-        outcome: 'A practical resilience and scalability roadmap tuned to your real growth trajectory.',
-      },
-      {
         title: 'TCO Analysis',
         summary:
           'The sticker price is rarely the full cost. We model licensing, infrastructure, support, staffing, and downtime impact over time.',
@@ -72,13 +61,24 @@ const dbServiceSections: ServiceSection[] = [
         ],
         outcome: 'A finance-ready TCO view leadership can use for confident investment decisions.',
       },
+      {
+        title: 'Technology Selection',
+        summary:
+          'Choosing the wrong database can create years of technical debt. We run a structured, vendor-neutral evaluation shaped by your workload, operating model, and long-term scalability.',
+        points: [
+          'Evaluate relational, NoSQL, NewSQL, time-series, and graph options against real query patterns',
+          'Factor in team capability, operational maturity, and maintainability — not only raw performance',
+          'Applicable for greenfield builds, legacy migrations, and modernization initiatives',
+        ],
+        outcome: 'A clear, justified technology recommendation with scoring rationale and adoption roadmap.',
+      },
     ],
   },
   {
     icon: Server,
     title: 'Implementation & Migration',
     strapline: 'Faster, safer migrations with complete planning, dependency visibility, and controlled cutover.',
-    imageSrc: '/images/hero-bg.jpg',
+    imageSrc: '/images/implementation.jpg',
     imageAlt: 'Data infrastructure and migration',
     details: [
       {
@@ -131,7 +131,7 @@ const dbServiceSections: ServiceSection[] = [
     icon: Cog,
     title: 'Managed Services',
     strapline: '24x7 operational ownership to keep databases secure, performant, and incident-ready.',
-    imageSrc: '/images/business-intelligence.jpg',
+    imageSrc: '/images/managed-services.jpg',
     imageAlt: 'Operations, monitoring, and managed data services',
     details: [
       {
@@ -353,7 +353,7 @@ export default function AdvancedDataServices() {
                           Capabilities
                         </span>
                         <span className="text-[10px] text-gray-400 font-medium">
-                          {service.details.length} topics
+                          {/* {service.details.length} topics */}
                         </span>
                       </div>
 
