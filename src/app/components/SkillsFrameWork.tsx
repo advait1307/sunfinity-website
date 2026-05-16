@@ -6,7 +6,7 @@ const tiers = [
     label: "Fundamentals",
     level: 1,
     color: "#E07B00",
-    icon: "",
+    icon: "👶🏻",
     audience: ["First time SE", "CSM", "Freshers", "Partners"],
     courses: [
       { title: "Business Value Discovery", linked: true },
