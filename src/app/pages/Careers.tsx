@@ -29,7 +29,7 @@ export default function Careers() {
             </span>
             <h1 className="text-5xl md:text-7xl font-black mb-6">Careers</h1>
             <p className="text-white/85 text-xl max-w-2xl mx-auto leading-relaxed">
-              Help enterprises simplify the complex. Explore open roles and apply in one click — your email client will open with the role and job ID prefilled.
+              Help enterprises simplify the complex. <br></br>Explore open roles at Sunfinity.
             </p>
           </motion.div>
         </div>

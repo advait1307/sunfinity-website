@@ -17,17 +17,17 @@ const GEARS: Gear[] = [
   {
     cx: 405, cy: 358, R: 148, r: 112, teeth: 14,
     fill: '#F5A623', cls: 'g-lg',
-    label: ['Fundamental', 'Presales Skills'], lc: '#5c3506', fontSize: 15,
+    label: ['Fundamental', 'Presales Skills'], lc: '#5c3506', fontSize: 20,
   },
   {
     cx: 308, cy: 118, R: 94, r: 71, teeth: 11,
     fill: '#C4722A', cls: 'g-tp',
-    label: ['Biz Domain', 'Basics'], lc: '#3d1e06', fontSize: 13,
+    label: ['Biz Domain', 'Basics'], lc: '#3d1e06', fontSize: 18,
   },
   {
     cx: 152, cy: 258, R: 108, r: 82, teeth: 12,
     fill: '#F5D170', cls: 'g-lt',
-    label: ['Cognitive', 'Excellence'], lc: '#6b4700', fontSize: 13,
+    label: ['Cognitive', 'Excellence'], lc: '#6b4700', fontSize: 18,
   },
 ]
 

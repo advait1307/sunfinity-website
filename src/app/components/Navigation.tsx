@@ -21,13 +21,14 @@ export default function Navigation() {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-100 shadow-sm">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="flex items-center justify-between h-[72px]">
+        <div className="flex items-center justify-between h-[80px]">
           {/* Logo */}
           <Link to="/" className="flex items-center py-1">
             <img
-              src="/images/sunfinity-logo.png"
+              src="/images/sunfinity-logo-main.png"
               alt="Sunfinity Technology Solutions"
-              className="h-12 md:h-14 w-auto object-contain"
+              className="h-20 md:h-24 w-auto object-contain"
+
             />
           </Link>
 
@@ -74,7 +75,7 @@ export default function Navigation() {
             </div>
             <Link to="/partnerships" className={linkClass('/partnerships')}>Partnerships</Link>
             <Link to="/blogs" className={linkClass('/blogs')}>Blog</Link>
-            <Link to="/podcasts" className={linkClass('/podcasts')}>Podcasts</Link>
+            <Link to="/podcasts" className={linkClass('/podcasts')}>Podcast</Link>
 
             {/* <Link to="/careers" className={linkClass('/careers')}>Careers</Link> */}
 

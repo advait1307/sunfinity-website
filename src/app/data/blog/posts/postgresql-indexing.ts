@@ -9,7 +9,7 @@ export const postgresqlIndexingPost: BlogPost = {
   title: 'Why your PostgreSQL queries are slow — and how to fix them with the right indexes',
   excerpt:
     'Most PostgreSQL performance problems come down to the planner not finding data fast enough. Measure with EXPLAIN ANALYZE, pick the right index type, and validate usage — without guessing.',
-  date: '2026-05-01',
+  date: '2026-05-15',
   readTime: '8 min read',
   author: 'Sunfinity Data Engineering',
   publicationLine: 'Sunfinity Technology Solutions | Data Engineering Blog',

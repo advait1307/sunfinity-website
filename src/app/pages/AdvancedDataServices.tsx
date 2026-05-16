@@ -25,33 +25,11 @@ const dbServiceSections: ServiceSection[] = [
     icon: Database,
     title: 'Database Consulting',
     strapline: 'Technology, licensing, architecture, and total-cost decisions with confidence.',
-    imageSrc: '/images/Advanced Data Services .jpg',
+    imageSrc: '/images/database-consulting.jpg',
     imageAlt: 'Database consulting and architecture',
     details: [
       {
-        title: 'Technology selection',
-        summary:
-          'Choosing the wrong database can create years of technical debt. We run a structured, vendor-neutral evaluation shaped by your workload, operating model, and long-term scalability.',
-        points: [
-          'Evaluate relational, NoSQL, NewSQL, time-series, and graph options against real query patterns',
-          'Factor in team capability, operational maturity, and maintainability — not only raw performance',
-          'Applicable for greenfield builds, legacy migrations, and modernization initiatives',
-        ],
-        outcome: 'A clear, justified technology recommendation with scoring rationale and adoption roadmap.',
-      },
-      {
-        title: 'Licensing advisory',
-        summary:
-          'Database licensing is one of the highest-risk and highest-cost line items in enterprise IT. We decode the fine print before commitment.',
-        points: [
-          'Analyze Oracle, SQL Server, IBM, and open-source licensing models to surface exposure',
-          'Perform audit-readiness checks and identify compliance gaps proactively',
-          'Support commercial-to-open-source and pricing-model transitions with minimal disruption',
-        ],
-        outcome: 'Actionable licensing guidance that protects cost and compliance before an audit forces action.',
-      },
-      {
-        title: 'Architecture review',
+        title: 'Architecture Review',
         summary:
           'Architectures that work at 10,000 users can fail silently at 10 million. We uncover structural risks before they become incidents.',
         points: [
@@ -62,7 +40,18 @@ const dbServiceSections: ServiceSection[] = [
         outcome: 'A practical resilience and scalability roadmap tuned to your real growth trajectory.',
       },
       {
-        title: 'TCO analysis',
+        title: 'Licensing Advisory',
+        summary:
+          'Database licensing is one of the highest-risk and highest-cost line items in enterprise IT. We decode the fine print before commitment.',
+        points: [
+          'Analyze Oracle, SQL Server, IBM, and open-source licensing models to surface exposure',
+          'Perform audit-readiness checks and identify compliance gaps proactively',
+          'Support commercial-to-open-source and pricing-model transitions with minimal disruption',
+        ],
+        outcome: 'Actionable licensing guidance that protects cost and compliance before an audit forces action.',
+      },
+      {
+        title: 'TCO Analysis',
         summary:
           'The sticker price is rarely the full cost. We model licensing, infrastructure, support, staffing, and downtime impact over time.',
         points: [
@@ -72,17 +61,28 @@ const dbServiceSections: ServiceSection[] = [
         ],
         outcome: 'A finance-ready TCO view leadership can use for confident investment decisions.',
       },
+      {
+        title: 'Technology Selection',
+        summary:
+          'Choosing the wrong database can create years of technical debt. We run a structured, vendor-neutral evaluation shaped by your workload, operating model, and long-term scalability.',
+        points: [
+          'Evaluate relational, NoSQL, NewSQL, time-series, and graph options against real query patterns',
+          'Factor in team capability, operational maturity, and maintainability — not only raw performance',
+          'Applicable for greenfield builds, legacy migrations, and modernization initiatives',
+        ],
+        outcome: 'A clear, justified technology recommendation with scoring rationale and adoption roadmap.',
+      },
     ],
   },
   {
     icon: Server,
     title: 'Implementation & Migration',
     strapline: 'Faster, safer migrations with complete planning, dependency visibility, and controlled cutover.',
-    imageSrc: '/images/hero-bg.jpg',
+    imageSrc: '/images/implementation.jpg',
     imageAlt: 'Data infrastructure and migration',
     details: [
       {
-        title: 'Assessment & planning',
+        title: 'Assessment & Planning',
         summary:
           'Most migration failures are planning failures. We baseline your estate and map risk, sequencing, rollback, and stakeholder impact before data moves.',
         points: [
@@ -93,7 +93,7 @@ const dbServiceSections: ServiceSection[] = [
         outcome: 'A migration plan engineers trust and leadership can approve with confidence.',
       },
       {
-        title: 'AI-accelerated migration',
+        title: 'AI-accelerated Migration',
         summary:
           'We combine AI-assisted conversion with expert review to reduce migration effort while maintaining correctness and control.',
         points: [
@@ -104,7 +104,7 @@ const dbServiceSections: ServiceSection[] = [
         outcome: 'A materially faster migration program with lower disruption and strong quality gates.',
       },
       {
-        title: 'Dependency analysis',
+        title: 'Dependency Analysis',
         summary:
           'Databases are deeply connected to apps, ETL, APIs, and reports. We map dependency blast radius before any transition.',
         points: [
@@ -115,7 +115,7 @@ const dbServiceSections: ServiceSection[] = [
         outcome: 'A validated dependency map that removes hidden migration surprises.',
       },
       {
-        title: 'Zero-downtime migrations',
+        title: 'Zero-downtime Migrations',
         summary:
           'For always-on systems, we architect live migration patterns that keep source and target synchronized throughout transition.',
         points: [
@@ -131,11 +131,11 @@ const dbServiceSections: ServiceSection[] = [
     icon: Cog,
     title: 'Managed Services',
     strapline: '24x7 operational ownership to keep databases secure, performant, and incident-ready.',
-    imageSrc: '/images/business-intelligence.jpg',
+    imageSrc: '/images/managed-services.jpg',
     imageAlt: 'Operations, monitoring, and managed data services',
     details: [
       {
-        title: '24x7 support',
+        title: '24x7 Support',
         summary:
           'Critical database incidents do not follow business hours. Our DBAs provide around-the-clock support with clear SLAs and escalation paths.',
         points: [
@@ -146,7 +146,7 @@ const dbServiceSections: ServiceSection[] = [
         outcome: 'Expert support availability at any hour, reducing pressure on internal on-call teams.',
       },
       {
-        title: 'Onsite & remote options',
+        title: 'Onsite & Remote Options',
         summary:
           'We adapt delivery to your security and operating model: onsite, remote, or hybrid managed services.',
         points: [
@@ -157,7 +157,7 @@ const dbServiceSections: ServiceSection[] = [
         outcome: 'A managed services model tailored to your operational reality.',
       },
       {
-        title: 'Community version ownership',
+        title: 'Community Version Ownership',
         summary:
           'We bring enterprise-grade discipline to open-source estates so your team is not overloaded with patching, tuning, and runbook ownership.',
         points: [
@@ -168,7 +168,7 @@ const dbServiceSections: ServiceSection[] = [
         outcome: 'Commercial-grade reliability on open-source databases with lower TCO.',
       },
       {
-        title: 'Performance monitoring',
+        title: 'Performance Monitoring',
         summary:
           'We detect degradation early by tracking query behavior, wait events, lock contention, and capacity trends.',
         points: [
@@ -353,7 +353,7 @@ export default function AdvancedDataServices() {
                           Capabilities
                         </span>
                         <span className="text-[10px] text-gray-400 font-medium">
-                          {service.details.length} topics
+                          {/* {service.details.length} topics */}
                         </span>
                       </div>
 
@@ -453,7 +453,7 @@ export default function AdvancedDataServices() {
               href="mailto:sales@sunfinity.tech"
               className="inline-flex items-center gap-2 bg-white text-[#ed8416] px-10 py-4 rounded-xl font-bold hover:bg-orange-50 transition-colors shadow-xl text-base"
             >
-              Reach out for a <br></br>free migration assessment
+              Reach Out for a Free Migration Assessment
             </a>
           </motion.div>
         </div>
