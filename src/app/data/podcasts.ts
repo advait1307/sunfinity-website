@@ -23,5 +23,13 @@ export const podcastEpisodes: PodcastEpisodeInput[] = [
     duration: '36:43',
     publishedAt: '2026-05-20',
   },
+  {
+    youtubeUrl: 'https://www.youtube.com/watch?v=amxVvooFQ2Y&t=25s',
+    description:
+      'The conversation delves into the evolution of the SE role, emphasizing the importance of soft skills and the changing landscape of the storage industry. It also explores the impact of AI on the SE role and concludes with a closing message of turning complexity into clarity.',
+    channel: 'Sunfinity Technologies',
+    duration: '34:42',
+    publishedAt: '2026-06-03',
+  },
   
 ]
