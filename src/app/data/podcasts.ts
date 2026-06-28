@@ -31,5 +31,13 @@ export const podcastEpisodes: PodcastEpisodeInput[] = [
     duration: '34:42',
     publishedAt: '2026-06-03',
   },
+  {
+    youtubeUrl: 'https://www.youtube.com/watch?v=F2EE7G3DXMI',
+    description:
+      "In this episode, we are talking about a subject which doesn't come naturally to most of the SEs... building and maintaining executive connections. Naresh brings his entire experience to life using real-world examples and personal anecdotes to share the significance of Exec connections and how it helps in technical win.",
+    channel: 'Sunfinity Technologies',
+    duration: '40:25',
+    publishedAt: '2026-06-25',
+  },
   
 ]
