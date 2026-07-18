@@ -26,14 +26,14 @@ const services = [
       'End-to-end database services — consulting, implementation, migration, and managed services. Core expertise in PostgreSQL, MongoDB, and Elastic across commercial and community versions.',
     to: '/advanced-data-services',
     color: 'from-orange-500 to-amber-600',
-    image: '/images/Advanced Data Services.jpg',
+    image: '/images/advanced-data-services.jpg',
   },
   {
     icon: BarChart2,
     title: 'Business Intelligence & Analytics',
     tagline: 'Business Analytics, Simplified',
     description:
-      'Transforming raw numbers into actionable stories with industry-leading BI and Analytics services. Powered by Tableau, enabling businesses to become an AI and data driven organizations.',
+      'Transforming raw numbers into actionable stories with industry-leading BI and Analytics services. Powered by Tableau, enabling businesses to become AI- and data-driven organizations.',
     to: '/business-intelligence-and-analytics',
     color: 'from-orange-600 to-red-600',
     image: '/images/business-intelligence.jpg',

@@ -1,12 +1,13 @@
 import { useLayoutEffect, useRef, useState, type MouseEvent } from 'react'
+import { GraduationCap, TrendingUp, Target } from 'lucide-react'
 
 const tiers = [
   {
     id: "fundamentals",
     label: "Fundamentals",
     level: 1,
-    color: "#E07B00",
-    icon: "👶🏻",
+    color: "#ed8416",
+    icon: GraduationCap,
     audience: ["First time SE", "CSM", "Freshers", "Partners"],
     courses: [
       { title: "Business Value Discovery", linked: true },
@@ -18,8 +19,8 @@ const tiers = [
     id: "applied",
     label: "Applied Skills",
     level: 2,
-    color: "#C96A00",
-    icon: "🚶",
+    color: "#c96d12",
+    icon: TrendingUp,
     audience: ["Experienced SE's", "SE Managers", "Inside teams", "Partners"],
     courses: [
       { title: "Powering Up The Presentation", linked: true },
@@ -33,8 +34,8 @@ const tiers = [
     id: "advanced",
     label: "Advanced Skills",
     level: 3,
-    color: "#B05500",
-    icon: "🏃",
+    color: "#9d5710",
+    icon: Target,
     audience: ["Enterprise SE", "CSM", "SE Managers"],
     courses: [
       { title: "Trusted Advisor Sales Engineer", linked: true },
@@ -78,22 +79,19 @@ export default function SESkillsFramework() {
 
   return (
     <section style={{
-      fontFamily: "'Inter', system-ui, sans-serif",
-      WebkitFontSmoothing: "antialiased",
-      MozOsxFontSmoothing: "grayscale",
-      padding: "60px 24px",
+      padding: "80px 24px",
       boxSizing: "border-box",
     }}>
 
       {/* Header */}
       <div style={{ textAlign: "center", marginBottom: "48px" }}>
-        <p style={{ color: "#E07B00", fontSize: "12px", fontWeight: 600, letterSpacing: "3px", textTransform: "uppercase", margin: "0 0 10px" }}>
+        <p style={{ color: "#ed8416", fontSize: "12px", fontWeight: 600, letterSpacing: "3px", textTransform: "uppercase", margin: "0 0 10px" }}>
           Upskilling Pathways
         </p>
         <h2 style={{ fontSize: "clamp(26px, 4vw, 36px)", fontWeight: 700, margin: "0 0 10px" }}>
           SE Skills Framework
         </h2>
-        <p style={{ fontSize: "15px", color: "#666", maxWidth: "400px", margin: "0 auto", lineHeight: 1.6 }}>
+        <p style={{ fontSize: "15px", color: "#4b5563", maxWidth: "400px", margin: "0 auto", lineHeight: 1.6 }}>
           A structured journey from foundational knowledge to enterprise-level expertise.
         </p>
       </div>
@@ -106,7 +104,7 @@ export default function SESkillsFramework() {
               <div style={{ width: 34, height: 34, borderRadius: "50%", background: tier.color, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 14, fontWeight: 600, color: "#fff" }}>
                 {tier.level}
               </div>
-              <span style={{ fontSize: 11, fontWeight: 500, color: "#888", whiteSpace: "nowrap", marginTop: 6 }}>{tier.label}</span>
+              <span style={{ fontSize: 11, fontWeight: 500, color: "#6b7280", whiteSpace: "nowrap", marginTop: 6 }}>{tier.label}</span>
             </div>
             {i < tiers.length - 1 && (
               <div style={{ flex: 1, height: 1.5, background: `linear-gradient(90deg, ${tier.color}, ${tiers[i + 1].color})`, margin: "0 8px", marginBottom: 18 }} />
@@ -115,7 +113,7 @@ export default function SESkillsFramework() {
         ))}
       </div>
 
-      {/* Cards — orange segments share one grid row per band, yellow the next; guarantees one horizontal line for footer tops */}
+      {/* Cards — header segments share one grid row per band, audience-tag footers the next; guarantees one horizontal line for footer tops */}
       <div
         ref={cardsGridRef}
         style={{
@@ -135,6 +133,7 @@ export default function SESkillsFramework() {
           const isHover = hovered === tier.id;
           const lift = isHover ? "translateY(-4px)" : "translateY(0)";
           const shadow = isHover ? "0 16px 40px rgba(0,0,0,0.13)" : "0 2px 12px rgba(0,0,0,0.06)";
+          const Icon = tier.icon;
           return (
             <div key={tier.id} style={{ display: "contents" }}>
               <div
@@ -158,8 +157,8 @@ export default function SESkillsFramework() {
                 }}
               >
                 <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 16 }}>
-                  <div style={{ background: "rgba(255,255,255,0.2)", borderRadius: 12, padding: "8px 10px", fontSize: 22, lineHeight: 1 }}>
-                    {tier.icon}
+                  <div style={{ background: "rgba(255,255,255,0.2)", borderRadius: 12, padding: "8px 10px", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                    <Icon size={20} color="#fff" strokeWidth={2} />
                   </div>
                   <span style={{ fontSize: 11, fontWeight: 500, letterSpacing: "1.2px", textTransform: "uppercase", padding: "3px 10px", borderRadius: 20, background: "rgba(0,0,0,0.2)", color: "rgba(255,255,255,0.9)" }}>
                     Level {tier.level}
@@ -181,7 +180,7 @@ export default function SESkillsFramework() {
                 style={{
                   gridColumn: col,
                   gridRow: rowFoot,
-                  background: "#F5A623",
+                  background: "#FFF7ED",
                   padding: "12px 20px",
                   display: "flex",
                   flexWrap: "wrap",
@@ -200,7 +199,22 @@ export default function SESkillsFramework() {
                 }}
               >
                 {tier.audience.map((a, j) => (
-                  <span key={j} style={{ fontSize: 12, fontWeight: 500, lineHeight: 1.25, padding: "4px 10px", borderRadius: 20, background: "rgba(0,0,0,0.1)", color: "#3A1E00", whiteSpace: "nowrap" }}>{a}</span>
+                  <span
+                    key={j}
+                    style={{
+                      fontSize: 12,
+                      fontWeight: 500,
+                      lineHeight: 1.25,
+                      padding: "4px 10px",
+                      borderRadius: 20,
+                      background: "#fff",
+                      border: `1px solid ${tier.color}33`,
+                      color: tier.color,
+                      whiteSpace: "nowrap",
+                    }}
+                  >
+                    {a}
+                  </span>
                 ))}
               </div>
             </div>

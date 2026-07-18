@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { GraduationCap, TrendingUp, Target, CheckCircle, Quote } from 'lucide-react'
+import { TrendingUp, CheckCircle, Quote } from 'lucide-react'
 import Navigation from '../components/Navigation'
 import Footer from '../components/Footer'
 import PresalesGears from '../components/PresalesGears'

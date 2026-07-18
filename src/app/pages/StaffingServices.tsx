@@ -89,7 +89,7 @@ export default function StaffingServices() {
                 As AI transforms the workplace, the "right" people are more valuable than ever. Organisations now require fewer resources, but those resources must possess a much higher level of specialised skill.
               </p>
               <p className="text-gray-600 leading-relaxed">
-                At Sunfinity, we bridge the talent gap by providing elite professionals across the technology spectrum — end-to-end talent services ranging from Acquisition, Outsourcing, and Contract Staffing.
+                At Sunfinity, we bridge the talent gap by providing elite professionals across the technology spectrum — end-to-end talent services across Acquisition, Outsourcing, and Contract Staffing.
               </p>
 
               <div className="bg-orange-50 p-6 rounded-xl border-l-4 border-[#ed8416]">
