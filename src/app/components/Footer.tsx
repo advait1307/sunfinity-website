@@ -33,7 +33,7 @@ export default function Footer() {
           </div>
             </Link>
             <p className="text-gray-400 text-sm leading-relaxed max-w-sm">
-              {/* Simplifying the complex — data, sales, and talent for the AI-driven world. */}
+              Simplifying the complex — data, sales, and talent for the AI-driven world.
             </p>
             <a
               href="https://www.linkedin.com/company/sunfintech/"
@@ -83,7 +83,7 @@ export default function Footer() {
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="w-4 h-4 text-[#ed8416] shrink-0" />
-                <a href="tel:9819332161" className="hover:text-[#ed8416] transition-colors">
+                <a href="tel:+919819332161" className="hover:text-[#ed8416] transition-colors">
                   +91 98193 32161
                 </a>
               </li>

@@ -49,6 +49,20 @@ export default function Careers() {
             on CC. Add your details, attach your resume, and send.
           </p> */}
 
+          {jobListings.length === 0 ? (
+            <div className="text-center py-16 px-6 bg-white rounded-2xl border border-stone-200">
+              <Briefcase className="w-10 h-10 text-[#ed8416] mx-auto mb-4" />
+              <h2 className="text-xl font-bold text-stone-900 mb-2">No open roles right now</h2>
+              <p className="text-stone-600 max-w-md mx-auto leading-relaxed">
+                We don't have any active openings at the moment, but we're always happy to hear from great talent.
+                Send us your resume at{' '}
+                <a href="mailto:sales@sunfinity.tech" className="text-[#ed8416] font-medium hover:underline">
+                  sales@sunfinity.tech
+                </a>{' '}
+                and we'll reach out when a role fits.
+              </p>
+            </div>
+          ) : (
           <div className="space-y-6">
             {jobListings.map((job, idx) => (
               <motion.div
@@ -93,6 +107,7 @@ export default function Careers() {
               </motion.div>
             ))}
           </div>
+          )}
         </div>
       </section>
 
