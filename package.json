@@ -6,9 +6,12 @@
   "scripts": {
     "dev": "vite",
     "build": "npx tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "studio": "npm --prefix studio run dev",
+    "studio:deploy": "npm --prefix studio run deploy"
   },
   "dependencies": {
+    "@sanity/client": "^7.26.0",
     "framer-motion": "^11.0.0",
     "lucide-react": "^0.383.0",
     "react": "^18.3.1",

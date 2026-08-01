@@ -10,6 +10,7 @@ import BusinessIntelligenceAndAnalytics from './app/pages/BusinessIntelligenceAn
 import Blogs from './app/pages/Blogs'
 import BlogPost from './app/pages/BlogPost'
 import Careers from './app/pages/Careers'
+import CareerJob from './app/pages/CareerJob'
 import Podcasts from './app/pages/Podcasts'
 
 function ScrollToTop() {
@@ -37,6 +38,7 @@ export default function App() {
         <Route path="/blogs" element={<Blogs />} />
         <Route path="/blogs/:slug" element={<BlogPost />} />
         <Route path="/careers" element={<Careers />} />
+        <Route path="/careers/:slug" element={<CareerJob />} />
         <Route path="/podcasts" element={<Podcasts />} />
       </Routes>
     </BrowserRouter>
