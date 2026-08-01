@@ -2,6 +2,11 @@
   command = "npm run build"
   publish = "dist"
 
+  # These Vite vars are intentionally public (baked into the browser bundle).
+  # Omit them so Netlify secrets scanning does not fail the deploy.
+  [build.environment]
+    SECRETS_SCAN_OMIT_KEYS = "VITE_SANITY_PROJECT_ID,VITE_SANITY_DATASET"
+
 [[redirects]]
   from = "/*"
   to = "/index.html"

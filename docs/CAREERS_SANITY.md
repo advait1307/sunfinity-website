@@ -84,6 +84,8 @@ Publish. The live site shows it at:
 
 Add the same `VITE_SANITY_*` variables in Netlify → Site settings → Environment variables, then redeploy.
 
+Do **not** mark them as secret / “Contains secret values”. They are public client-side config (Vite embeds them in the JS bundle). `netlify.toml` already sets `SECRETS_SCAN_OMIT_KEYS` so scanning does not block the build.
+
 ## Closing a role
 
 Edit the job → turn **Active** off → Publish. It disappears from the website immediately (CDN may take a minute).
