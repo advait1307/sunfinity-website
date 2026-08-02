@@ -39,5 +39,13 @@ export const podcastEpisodes: PodcastEpisodeInput[] = [
     duration: '40:25',
     publishedAt: '2026-06-25',
   },
+  {
+    youtubeUrl: 'https://www.youtube.com/watch?v=amIIrccwSRI',
+    description:
+      "In this episode, Abhishek discusses the core of being an SE, the evolution of the SE role, the definition of a trusted advisor, leveraging trust in different scenarios, and inculcating trust in the SE team. He emphasizes the importance of trust in customer engagements and provides insights on building and maintaining trust in various scenarios and within the SE team. The conversation delves into the nuances of building, teaching, and maintaining trust in sales, emphasizing the importance of consistent behavior and communication skills. It also explores the impact of AI on the role of SEs and the barriers to becoming a trusted advisor. The value of trust and the need for continuous learning are highlighted, providing valuable insights for SEs and sales professionals.",
+    channel: 'Sunfinity Technologies',
+    duration: '39:04',
+    publishedAt: '2026-08-02',
+  },
   
 ]
