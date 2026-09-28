@@ -1,0 +1,31 @@
+# Sunfinity Technology Solutions
+
+> Simplifying the complex — data, sales, and talent for the AI-driven world.
+
+Sunfinity is a technology services firm headquartered in Pune, India, with presence in Mumbai and New Delhi. Founded by veterans from Wipro, HPE, Dell EMC, UiPath, Commvault, FIS, and TCS. Contact: sales@sunfinity.tech | +91 98193 32161 | H-18 Runals Deepmala, Pimple Saudagar, Pune 411027, India. LinkedIn: https://www.linkedin.com/company/sunfintech/
+
+## Services
+
+- [Advanced Data Services](https://sunfinity.tech/advanced-data-services): End-to-end database consulting, implementation, migration, and managed services. Core expertise in PostgreSQL, MongoDB, Elastic, EDB Postgres, and YugabyteDB.
+- [Business Intelligence & Analytics](https://sunfinity.tech/business-intelligence-and-analytics): Tableau-powered visualization, MIS automation, and analytics managed services.
+- [UpSkilling Services](https://sunfinity.tech/upskilling-services): Technical sales / pre-sales training via Sellers' Interpersonal Quotient (SIQ), in partnership with Mastering Technical Sales (USA).
+- [Staffing Services](https://sunfinity.tech/staffing-services): Talent acquisition and contract staffing for database, cloud, infrastructure, analytics, and solution engineering.
+
+## Company
+
+- [Home](https://sunfinity.tech/): Positioned around three pillars — complex data, business analytics, and technical sales.
+- [About](https://sunfinity.tech/about): Leadership includes Anshuman Rai (Co-Founder & CBO), Sriraman R (Partner & Practice Lead), and Ajay Agrawal (Partner & Practice Head).
+- [Partnerships](https://sunfinity.tech/partnerships): EDB Postgres AI, Yugabyte DB, Salesforce / Tableau, Elastic, Mastering Technical Sales, Cloudera.
+- [Careers](https://sunfinity.tech/careers): Open roles at Sunfinity.
+
+## Content
+
+- [Blog](https://sunfinity.tech/blogs): Data engineering writing on PostgreSQL performance and security.
+- [Why your PostgreSQL queries are slow — and how to fix them with the right indexes](https://sunfinity.tech/blogs/postgresql-query-performance-indexing)
+- [PostgreSQL security hardening for regulated industries](https://sunfinity.tech/blogs/postgresql-security-regulated-industries)
+- [Podcast](https://sunfinity.tech/podcasts): Architects of the Technical Win — conversations on data, sales engineering, and teams in the AI era.
+
+## Optional
+
+- Sitemap: https://sunfinity.tech/sitemap.xml
+- Robots: https://sunfinity.tech/robots.txt

@@ -76,9 +76,7 @@ export default function Navigation() {
             <Link to="/partnerships" className={linkClass('/partnerships')}>Partnerships</Link>
             <Link to="/blogs" className={linkClass('/blogs')}>Blog</Link>
             <Link to="/podcasts" className={linkClass('/podcasts')}>Podcast</Link>
-
-            {/* <Link to="/careers" className={linkClass('/careers')}>Careers</Link> */}
-
+            <Link to="/careers" className={linkClass('/careers')}>Careers</Link>
             <a
               href="mailto:sales@sunfinity.tech"
               className="bg-[#ed8416] text-white px-5 py-2 rounded-lg font-medium hover:bg-[#c96d12] transition-colors"
