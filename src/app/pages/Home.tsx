@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { Database, TrendingUp, Users, ChevronRight, ArrowRight, BarChart2 } from 'lucide-react'
+import { Database, Cloud, ChevronRight, ArrowRight, BarChart2 } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import Navigation from '../components/Navigation'
 import Footer from '../components/Footer'
@@ -7,23 +7,35 @@ import Footer from '../components/Footer'
 const partnerLogos = [
   { name: 'EDB Postgres', src: '/images/edb-postgres.png' },
   { name: 'Yugabyte DB', src: '/images/yugabyte-logo.png' },
-  { name: 'Salesforce', src: '/images/salesforce-logo.png' },
+  { name: 'Salesforce', src: '/images/salesforce-logo.webp' },
   { name: 'Elastic', src: '/images/elastic-logo.png' },
   { name: 'Cloudera', src: '/images/cloudera-logo.png' },
   { name: 'EDB Postgres', src: '/images/edb-postgres.png' },
   { name: 'Yugabyte DB', src: '/images/yugabyte-logo.png' },
-  { name: 'Salesforce', src: '/images/salesforce-logo.png' },
+  { name: 'Salesforce', src: '/images/salesforce-logo.webp' },
   { name: 'Elastic', src: '/images/elastic-logo.png' },
   { name: 'Cloudera', src: '/images/cloudera-logo.png' },
 ]
 
-const services = [
+type Service = {
+  icon: typeof Database | typeof BarChart2 | typeof Cloud
+  title: string
+  tagline: string
+  description: string
+  to: string
+  color: string
+  image: string
+  imageClass?: string
+  isLogo?: boolean
+}
+
+const services: Service[] = [
   {
     icon: Database,
     title: 'Advanced Data Services',
     tagline: 'Complex Data, Simplified',
     description:
-      'End-to-end database services — consulting, implementation, migration, and managed services. Core expertise in PostgreSQL, MongoDB, and Elastic across commercial and community versions.',
+  'End-to-end Salesforce services — consulting, implementation, data migration, and integrations. Core expertise in Sales Cloud and Service Cloud, with training and ongoing support to drive adoption.',
     to: '/advanced-data-services',
     color: 'from-orange-500 to-amber-600',
     image: '/images/advanced-data-services.jpg',
@@ -39,14 +51,16 @@ const services = [
     image: '/images/business-intelligence.jpg',
   },
   {
-    icon: TrendingUp,
-    title: 'UpSkilling Services',
-    tagline: 'Complex Sales, Simplified',
+    icon: Cloud,
+    title: 'Salesforce Consulting & Implementation',
+    tagline: 'Complex CRM, Simplified',
     description:
-      'Equipping technical sales teams with the Sellers Interpersonal Quotient (SIQ) — the force multiplier that turns technical excellence into closed deals.',
-    to: '/upskilling-services',
+  'End-to-end Salesforce services — consulting, implementation, data migration, and integrations. Core expertise in Sales Cloud and Service Cloud, with training and ongoing support to drive adoption.',
+    to: '/salesforce-consulting',
     color: 'from-amber-500 to-orange-600',
-    image: '/images/upskilling.jpg',
+    image: '/images/salesforce-logo.png',
+    imageClass: 'object-contain p-12',
+    isLogo: true,
   },
 ]
 
@@ -104,9 +118,9 @@ export default function Home() {
             {/* Three pillars */}
             <div className="grid md:grid-cols-3 gap-4 max-w-4xl mx-auto mb-12">
               {[
-                { label: 'Complex Data'},
+                { label: 'Sales and Service CRM'},
+                { label: 'Database Consulting'},
                 { label: 'Business Analytics'},
-                { label: 'Technical Sales'},
               ].map((p) => (
                 <motion.div
                   key={p.label}
@@ -197,13 +211,15 @@ export default function Home() {
 
                   {/* Visual side */}
                   <div className={`${!isEven ? 'md:col-start-1 md:row-start-1' : ''}`}>
-                    <div className="relative overflow-hidden rounded-3xl shadow-2xl">
+                    <div className={`relative overflow-hidden rounded-3xl shadow-2xl ${service.isLogo ? 'bg-white' : ''}`}>
                       <img
                         src={service.image}
                         alt={`${service.title} visual`}
-                        className="w-full h-[350px]  object-cover"
+                        className={`w-full h-[350px] ${service.imageClass ?? 'object-cover'}`}
                       />
-                      <div className="absolute inset-0 bg-[#ed8416]/20 mix-blend-multiply pointer-events-none" />
+                      {!service.isLogo && (
+                        <div className="absolute inset-0 bg-[#ed8416]/20 mix-blend-multiply pointer-events-none" />
+                      )}
                     </div>
                   </div>
                 </motion.div>
@@ -264,3 +280,4 @@ export default function Home() {
     </div>
   )
 }
+

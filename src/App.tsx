@@ -5,6 +5,7 @@ import About from './app/pages/About'
 import Partnerships from './app/pages/Partnerships'
 import AdvancedDataServices from './app/pages/AdvancedDataServices'
 import UpskillingServices from './app/pages/UpskillingServices'
+import SalesforceConsulting from './app/pages/SalesforceConsulting'
 import StaffingServices from './app/pages/StaffingServices'
 import BusinessIntelligenceAndAnalytics from './app/pages/BusinessIntelligenceAndAnalytics'
 import Blogs from './app/pages/Blogs'
@@ -33,6 +34,7 @@ export default function App() {
         <Route path="/partnerships" element={<Partnerships />} />
         <Route path="/advanced-data-services" element={<AdvancedDataServices />} />
         <Route path="/upskilling-services" element={<UpskillingServices />} />
+        <Route path="/salesforce-consulting" element={<SalesforceConsulting />} />
         <Route path="/business-intelligence-and-analytics" element={<BusinessIntelligenceAndAnalytics />} />
         <Route path="/staffing-services" element={<StaffingServices />} />
         <Route path="/blogs" element={<Blogs />} />
