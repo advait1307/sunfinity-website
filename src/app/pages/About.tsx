@@ -13,15 +13,6 @@ const team = [
     profileUrl: 'https://www.linkedin.com/in/raianshu/',
   },
   {
-    name: 'Sriraman R',
-    title: 'Partner & Practice Lead',
-    description:
-      'Technology leader with over 25 years of experience across solution sales and professional services. Sriraman brings a consultative approach with a track record of delivering impactful digital transformation outcomes.',
-    image: '/images/team-sriraman.jpg',
-    imagePosition: '50% 14%',
-    profileUrl: 'https://www.linkedin.com/in/sriramanr/',
-  },
-  {
     name: 'Ajay Agrawal',
     title: 'Partner & Practice Head',
     description:
@@ -99,7 +90,7 @@ export default function About() {
               className="space-y-4"
             >
               {[
-                { label: 'Combined Leadership Experience', value: '75+ Years' },
+                { label: 'Combined Leadership Experience', value: '50+ Years' },
                 { label: 'Technology Partners', value: '6+' },
                 { label: 'Office Locations', value: 'Mumbai, Pune, Delhi' },
                 // { label: 'Domains Served', value: 'Data · Sales · Talent' },
@@ -131,7 +122,7 @@ export default function About() {
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mt-3">Leadership</h2>
           </motion.div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {team.map((member, idx) => (
               <motion.div
                 key={member.name}

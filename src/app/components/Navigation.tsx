@@ -69,6 +69,13 @@ export default function Navigation() {
                     >
                       UpSkilling Services
                     </Link>
+                    <Link
+                      to="/salesforce-consulting"
+                      className="block px-5 py-2.5 text-gray-700 hover:bg-orange-50 hover:text-[#ed8416] transition-colors"
+                      onClick={() => setServicesOpen(false)}
+                    >
+                      Salesforce Consulting & Implementation
+                    </Link>
                   </div>
                 </div>
               )}
@@ -106,6 +113,7 @@ export default function Navigation() {
               { to: '/careers', label: 'Careers' },
               { to: '/advanced-data-services', label: 'Advanced Data Services' },
               { to: '/upskilling-services', label: 'UpSkilling Services' },
+              { to: '/salesforce-consulting', label: 'Salesforce Consulting & Implementation' },
               { to: '/business-intelligence-and-analytics', label: 'Business Intelligence & Analytics' },
               { to: '/staffing-services', label: 'Staffing Services' },
             ].map(({ to, label }) => (

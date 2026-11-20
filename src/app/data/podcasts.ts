@@ -16,20 +16,20 @@ export type PodcastEpisodeInput = {
 
 export const podcastEpisodes: PodcastEpisodeInput[] = [
   {
-    youtubeUrl: 'https://www.youtube.com/watch?v=fbbNl1Gx9_4&t=1967s',
+    youtubeUrl: 'https://www.youtube.com/watch?v=Y8MKVrMtdAA',
     description:
-      'The podcast episode features Abhijit Portnis, a seasoned pre-sales leader, discussing his journey, the evolution of pre-sales, and the challenges faced in software and infrastructure pre-sales. He also shares insights on the role of SEs and the key aspects that make an SE successful. The conversation with Abhijit covers the essential qualities of a successful Associate Consultant (AC) and the importance of soft skills in pre-sales. It also delves into the impact of AI on pre-sales, the future of pre-sales roles, and the significance of customer relationships.',
+      'Join me and Amol, talking about this topic in the context of Presales. In this episode, we talk about what value means to different personas, how to consciously stay focused on value selling, how to transition from a tech conversation (the easy thing for an SE) to a value conversation, and many other things. AI can help you with data, but talking value is a very human thing.',
     channel: 'Sunfinity Technologies',
-    duration: '36:43',
-    publishedAt: '2026-05-20',
+    duration: '46:54',
+    publishedAt: '2026-11-05',
   },
   {
-    youtubeUrl: 'https://www.youtube.com/watch?v=amxVvooFQ2Y&t=25s',
+    youtubeUrl: 'https://www.youtube.com/watch?v=amIIrccwSRI',
     description:
-      'The conversation delves into the evolution of the SE role, emphasizing the importance of soft skills and the changing landscape of the storage industry. It also explores the impact of AI on the SE role and concludes with a closing message of turning complexity into clarity.',
+      "In this episode, Abhishek discusses the core of being an SE, the evolution of the SE role, the definition of a trusted advisor, leveraging trust in different scenarios, and inculcating trust in the SE team. He emphasizes the importance of trust in customer engagements and provides insights on building and maintaining trust in various scenarios and within the SE team. The conversation delves into the nuances of building, teaching, and maintaining trust in sales, emphasizing the importance of consistent behavior and communication skills. It also explores the impact of AI on the role of SEs and the barriers to becoming a trusted advisor. The value of trust and the need for continuous learning are highlighted, providing valuable insights for SEs and sales professionals.",
     channel: 'Sunfinity Technologies',
-    duration: '34:42',
-    publishedAt: '2026-06-03',
+    duration: '39:04',
+    publishedAt: '2026-08-02',
   },
   {
     youtubeUrl: 'https://www.youtube.com/watch?v=F2EE7G3DXMI',
@@ -40,12 +40,20 @@ export const podcastEpisodes: PodcastEpisodeInput[] = [
     publishedAt: '2026-06-25',
   },
   {
-    youtubeUrl: 'https://www.youtube.com/watch?v=amIIrccwSRI',
+    youtubeUrl: 'https://www.youtube.com/watch?v=amxVvooFQ2Y&t=25s',
     description:
-      "In this episode, Abhishek discusses the core of being an SE, the evolution of the SE role, the definition of a trusted advisor, leveraging trust in different scenarios, and inculcating trust in the SE team. He emphasizes the importance of trust in customer engagements and provides insights on building and maintaining trust in various scenarios and within the SE team. The conversation delves into the nuances of building, teaching, and maintaining trust in sales, emphasizing the importance of consistent behavior and communication skills. It also explores the impact of AI on the role of SEs and the barriers to becoming a trusted advisor. The value of trust and the need for continuous learning are highlighted, providing valuable insights for SEs and sales professionals.",
+      'The conversation delves into the evolution of the SE role, emphasizing the importance of soft skills and the changing landscape of the storage industry. It also explores the impact of AI on the SE role and concludes with a closing message of turning complexity into clarity.',
     channel: 'Sunfinity Technologies',
-    duration: '39:04',
-    publishedAt: '2026-08-02',
+    duration: '34:42',
+    publishedAt: '2026-06-03',
   },
+  {
+    youtubeUrl: 'https://www.youtube.com/watch?v=fbbNl1Gx9_4&t=1967s',
+    description:
+      'The podcast episode features Abhijit Portnis, a seasoned pre-sales leader, discussing his journey, the evolution of pre-sales, and the challenges faced in software and infrastructure pre-sales. He also shares insights on the role of SEs and the key aspects that make an SE successful. The conversation with Abhijit covers the essential qualities of a successful Associate Consultant (AC) and the importance of soft skills in pre-sales. It also delves into the impact of AI on pre-sales, the future of pre-sales roles, and the significance of customer relationships.',
+    channel: 'Sunfinity Technologies',
+    duration: '36:43',
+    publishedAt: '2026-05-20',
+  }
   
 ]

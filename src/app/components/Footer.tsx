@@ -13,7 +13,8 @@ const quickLinks = [
 const serviceLinks = [
   { to: '/advanced-data-services', label: 'Advanced Data Services' },
   { to: '/upskilling-services', label: 'UpSkilling Services' },
-  { to: '/business-intelligence-and-analytics', label: 'BI & Analytics' }
+  { to: '/business-intelligence-and-analytics', label: 'BI & Analytics' },
+  { to: '/salesforce-consulting', label: 'Salesforce Consulting' },
 ]
 
 export default function Footer() {
